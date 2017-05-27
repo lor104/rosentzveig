@@ -158,14 +158,15 @@ $(document).ready(function() {
   })
 
   $("#reset-all-skills").on("click", function(e) {
-    e.preventDefault();
-    matches = 0;
-    clicks = 0;
-    $('#number-of-matches').text("Matches: 0/10");
-    $('.modal').css("display", "none");
-    $('div.skill').removeClass("flip");
-    $('div.skill').removeClass("stay");
-    reDealCards()
+    location.reload();
+    // e.preventDefault();
+    // matches = 0;
+    // clicks = 0;
+    // $('#number-of-matches').text("Matches: 0/10");
+    // $('.modal').css("display", "none");
+    // $('div.skill').removeClass("flip");
+    // $('div.skill').removeClass("stay");
+    // reDealCards();
   })
 
 });
