@@ -3,18 +3,62 @@
   font-family: 'Open Sans', serif;
 }
 
-/*styling for concentration game*/
-div.skill {
-  display: inline-block;
-  /*float: left;*/
+body {
+  /*background-color: #f2efe7;*/
 }
 
-div.skill:nth-child(5n + 2) {
+h1, h2, .header h3 {
+  text-transform: uppercase;
+}
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 20px;
+}
+
+li a {
+  text-decoration: none;
+}
+
+#experience-section {
+  clear:both;
+}
+
+/*styling for concentration game*/
+div#skills-section {
+  border: double 6px black;
+  overflow: auto;
+  background-color: #f2efe7;
+  padding: 10px;
+  text-align: center;
+}
+
+#skills-game {
+  text-align: center;
+  position: relative;
+  /*left: 17%;*/
+}
+
+#reset-all-skills {
+  clear: both;
+}
+
+#number-of-matches {
+  clear:both;
+}
+
+div.skill {
+  display: inline-block;
+  float: left;
+}
+
+.card5, .card10, .card15 {
   clear: left;
 }
 
-img {
-  width: 200px;
+div.skill img {
+  width: 120px;
   padding: 5px;
 }
 
@@ -59,7 +103,7 @@ img {
 }
 
 .modal {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(116, 116, 116, 0.84);

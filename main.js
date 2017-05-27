@@ -30,16 +30,21 @@ $(document).ready(function() {
   skills[18] = {id: 18, photo: "images/sql.png"}
   skills[19] = {id: 19, photo: "images/rails.png"}
 
-  var front_img = "images/logo.png"
+  cardDivs = [".card0", ".card1", ".card2", ".card3", ".card4", ".card5", ".card6", ".card7", ".card8", ".card9", ".card10", ".card11", ".card12", ".card13", ".card14", ".card15", ".card16", ".card17", ".card18", ".card19", ]
+
+  var front_img = "images/logo-2.png"
   shuffleCards(skills)
 
+  function dealCards() {
   for (var i = 0; i < 20; i++) {
     var this_div = ".card" + i;
     var front_card = "<img src='"+ front_img +"' class='face front'></img>";
     var back_card = "<img src='"+ skills[i].photo +"' class='face back'></img>";
     $(front_card).appendTo(this_div);
     $(back_card).appendTo(this_div);
-    }
+  }};
+
+  dealCards();
 
   $('img').on('click', function(e) {
       //once matched the card cant be selected again
@@ -72,11 +77,13 @@ $(document).ready(function() {
   })
 
   function checkMatch(firstChoice, secondChoice, firstChoiceDiv, secondChoiceDiv) {
+    console.log(firstChoice, secondChoice, firstChoiceDiv, secondChoiceDiv)
     clicks = 0;
     if (firstChoice === secondChoice) {
       $("." + firstChoiceDiv).toggleClass("stay");
       $("." + secondChoiceDiv).toggleClass("stay");
       matches++;
+      $('#number-of-matches').text("Matches: " + matches + "/10")
       if (matches === 10) {
         console.log("winner winner chicken dinner")
         $('.modal').fadeIn(2000);
@@ -128,5 +135,37 @@ $(document).ready(function() {
     }
     return array;
 }
+
+  function reDealCards() {
+    for (var i = 0; i < cardDivs.length; i++) {
+    var eachCard = cardDivs[i];
+    $(eachCard).html("");
+  }
+  shuffleCards(skills)
+  dealCards();
+  }
+
+
+  $("#show-all-skills").on("click", function(e) {
+    e.preventDefault();
+    $('div.skill').addClass("flip");
+  })
+
+  $("#show-all-skills").on("click", function(e) {
+    e.preventDefault();
+    $('#number-of-matches').text("Matches: 10/10")
+    $('div.skill').addClass("flip");
+  })
+
+  $("#reset-all-skills").on("click", function(e) {
+    e.preventDefault();
+    matches = 0;
+    clicks = 0;
+    $('#number-of-matches').text("Matches: 0/10");
+    $('.modal').css("display", "none");
+    $('div.skill').removeClass("flip");
+    $('div.skill').removeClass("stay");
+    reDealCards()
+  })
 
 });
