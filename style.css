@@ -25,6 +25,38 @@ li a {
   clear:both;
 }
 
+/*styling for hangman game*/
+ul.alphabet {
+  list-style-type: none;
+}
+
+li.letter {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 9px;
+}
+
+li.letter:hover {
+  color: white;
+  background-color: lightgreen;
+  border-color: grey;
+}
+
+div.guess div {
+  display: inline-block;
+  width: 20px;
+  color: white;
+  text-align: center;
+  margin: 10px;
+  padding: 0 2px 5px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+}
+
 /*styling for concentration game*/
 div#skills-section {
   border: double 6px black;
