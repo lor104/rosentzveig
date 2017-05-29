@@ -10,59 +10,52 @@
   <body>
 
     <header>
-      <nav>
-        <!-- navbar -->
-        <ul>
-          <li>
-            <a href="#me-section">About Me</a>
-          </li>
-          <li>
-            <a href="#education-section">Education</a>
-          </li>
-          <li>
-            <a href="#skills-section">Skills</a>
-          </li>
-          <li>
-            <a href="#experience-section">Experience</a>
-          </li>
-        </ul>
-      </nav>
       <!-- header image -->
       <div class="header">
         <h1>Lauren Rosentzveig</h1>
         <h3>Front-End Web Developer</h3>
+        <nav>
+          <!-- navbar -->
+          <ul>
+            <li>
+              <a href="#me-section">About Me</a>
+            </li>
+            <li>
+              <a href="#education-section">Education</a>
+            </li>
+            <li>
+              <a href="#skills-section">Skills</a>
+            </li>
+            <li>
+              <a href="#experience-section">Experience</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     <main>
       <!-- about me -->
       <div id="me-section">
-        <h2>About Me</h2>
+        <h2 class="border"><span>About Me</span></h2>
         <p>Traditional Printmaker turned Web Developer, I strive to be creative in everything I do. Coupled with my logical thought process and willingness to learn, it turns front-end development into a very natural avenue for me to pursue </p>
       </div>
 
       <!-- education -->
       <div id="education-section">
-        <h2>Education</h2>
-        <div class="hangman-image">
-        </div>
-
-        <div class="info">
-        </div>
-
-        <div class="guess">
-        </div>
-
-        <div id="buttons">
-        </div>
-        <h3 class="institution-title 0">Hangman 1</h3>
-        <h3 class="institution-title 1">Hangman 2</h3>
+        <h2 class="border"><span>Education</span></h2>
+        <h3>Bitmaker Labs</h3>
+        <h4>March - May 2017</h4>
+        <p>Completed the Web Development (Full Stack) Immersive course in May 2017</p>
+        <h3>Queens University</h3>
+        <h4>2011 - 2015</h4>
+        <p>Graduated with a major in Fine Arts (specialization in Printmedia) and a minor in mathematics</p>
       </div>
 
       <!-- skills -->
       <div id="skills-section">
         <h2>Technical Skills</h2>
-        <p>I made a game of concentration for you to play, if you'd rather not, <a id="show-all-skills"href="#">click here</a></p>
+        <p>I made a game of concentration for you to play where all the cards are skills in which I'm proficient. If you'd rather not play, <a id="show-all-skills"href="#">click here</a></p>
         <div id="skills-game">
           <div class="modal">
             <h1>Winner winner chicken dinner</h1>
@@ -94,8 +87,26 @@
 
       <!-- experience -->
       <div id="experience-section">
-        <h2>Experience</h2>
+        <h2 class="border"><span>Experience</span></h2>
+        <p>While studying at Bitmaker Labs, I created this app with 3 other talented developers. The goal of the app was to be able to lend a helping hand to those who are looking to expand their existing beer knowledge by giving a user an optimal beer choice taken through suggestions based on their individual user input ratings. This app is also able to provide the user with directions to bars around Toronto where the beers are available on tap!</p>
+        <h3>Guess the app name!</h3>
+        <div class="hangman 0">
+          <div class="hangman-image">
+          </div>
 
+
+
+          <div class="info">
+          </div>
+
+          <div class="guess">
+          </div>
+
+          <div id="buttons">
+          </div>
+        </div>
+        <a id="solve-hangman" href="#">solve</a>
+        <a href="http://hoptimal.herokuapp.com" target="_blank">check it out for yourself!</a>
       </div>
     </main>
 

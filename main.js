@@ -1,26 +1,38 @@
 $(document).ready(function() {
 
-  $('.institution-title').on("click", function() {
-    var round = $(this).attr("class").split("");
-    round = round[round.length - 1];
-    console.log(round);
+  $('#solve-hangman').on("click", function(e) {
+    e.preventDefault();
+    for (var i = 0; i < guessWordLetterDivs.length; i++) {
+        var div = guessWordLetterDivs[i]
+        div.style['color'] = 'black';
+    }
+  })
+
+  round = 0;
 
     var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     var allWords = []
-    allWords[1] = {word: "Queens University", hint: "Located in Kingston, ON, this University holds an immense history within its signature limestone buildings. I studied here from 2011-2015 and graduated with a major in Fine Arts (specialization in Printmedia) and a minor in mathematics"}
-    allWords[0] = {word: "Bitmaker Labs", hint: "After spending some time after completing my BFA degree, I enrolled in a web development bootcamp at this private college in downtown Toronto. I studied here from March 2017 - May 2017"}
+    allWords[0] = {word: "Hoptimal", hint: "While studying at Bitmaker Labs, I created this app with 3 other talented developers. The goal of the app was to be able to lend a helping hand to those who are looking to expand their existing beer knowledge and aid the user in the ability to find where a particular beer is available on tap at bars around the city of Toronto."}
+    allWords[1] = {word: "Bitmaker Labs", hint: "After spending some time after completing my BFA degree, I enrolled in a web development bootcamp at this private college in downtown Toronto. I studied here from March 2017 - May 2017"}
+    allWords[2] = {word: "Queens University", hint: "Located in Kingston, ON, this University holds an immense history within its signature limestone buildings. I studied here from 2011-2015 and graduated with a major in Fine Arts (specialization in Printmedia) and a minor in mathematics"}
     var hangmanImage = ["images/hangman5.png", "images/hangman4.png", "images/hangman3.png", "images/hangman2.png", "images/hangman1.png", "images/hangman-full.png"]
     var errors = 0;
     var guessCorrect = false;
 
-  $('.info').append(allWords[round].hint)
-  var guessWord = allWords[round].word.toLowerCase().split("");
+  // $('.info').append(allWords[round].hint)
+  var guessWord = "Hoptimal".toLowerCase().split("");
   console.log(guessWord)
 
   // append the letters to divs, giving the divs the class name as the letter
   for (var i = 0; i < guessWord.length; i++) {
+    if (guessWord[i] === " ") {
+      guessWord[i] = "-"
+    }
     $('<div>').text(guessWord[i]).attr('class', guessWord[i]).appendTo('div.guess')
   }
+
+  // hiding the spaces in the answers
+  $('div.-').css("visibility", "hidden")
 
   // append the starting image
   $('div.hangman-image').append("<img src='images/hangman6.png'></img>");
@@ -39,6 +51,10 @@ $(document).ready(function() {
 
   //letters turn black when clicked
   $("li.letter").on("click", function(e) {
+    if ($(this).css("background-color") === "rgb(250, 235, 215)") {
+      return;
+    }
+    $(this).css("background-color", "antiquewhite");
     letterSelected = $(this).text()
     guessCorrect = false;
       for (var i = 0; i < guessWordLetterDivs.length; i++) {
@@ -67,7 +83,7 @@ $(document).ready(function() {
     $('div.hangman-image').append(imageTag);
   }}
 
-  })
+  // })
 
 
 });
@@ -118,7 +134,7 @@ $(document).ready(function() {
 
   dealCards();
 
-  $('img').on('click', function(e) {
+  $('div.skill img').on('click', function(e) {
       //once matched the card cant be selected again
       if ($(this).parent().hasClass("stay")) {
         return;
