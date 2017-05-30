@@ -51,10 +51,10 @@ $(document).ready(function() {
 
   //letters turn black when clicked
   $("li.letter").on("click", function(e) {
-    if ($(this).css("background-color") === "rgb(250, 235, 215)") {
+    if ($(this).css("background-color") === "rgba(179, 179, 179, 0.3)") {
       return;
     }
-    $(this).css("background-color", "antiquewhite");
+    $(this).css("background-color", "rgba(179, 179, 179, 0.3)");
     letterSelected = $(this).text()
     guessCorrect = false;
       for (var i = 0; i < guessWordLetterDivs.length; i++) {

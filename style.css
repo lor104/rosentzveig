@@ -23,7 +23,7 @@ h1, h2, .header h3 {
   padding-top: 30px;
   height: 300px;
   text-align: center;
-  background-color: #30d083;
+  background-color: #2BB673;
   color: white;
   width: 100%;
   position: relative;
@@ -40,7 +40,7 @@ h2.border {
     margin-bottom: 3%;
     position: relative;
     text-align: center;
-    color: #30d083;
+    color: #2BB673;
 }
 
 h2.border:before{
@@ -88,14 +88,14 @@ a {
   text-decoration: none;
   border: 1px solid #6D6E71;
   border-radius: 4px;
-  padding: 3px;
+  padding: 3px 10px;
   margin: 3px;
 }
 
 li a {
   text-decoration: none;
   color: black;
-  border: 1px solid #30d083;
+  border: 1px solid #2BB673;
   border-radius: 4px;
   padding: 10px;
   margin: 3px;
@@ -126,7 +126,7 @@ li.letter {
 
 li.letter:hover {
   color: white;
-  background-color: #30d083;
+  background-color: #2BB673;
   border-color: #6D6E71;
 }
 
