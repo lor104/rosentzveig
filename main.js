@@ -35,7 +35,7 @@ $(document).ready(function() {
   $('div.-').css("visibility", "hidden")
 
   // append the starting image
-  $('div.hangman-image').append("<img src='images/hangman6.png'></img>");
+  // $('div.hangman-image').append("<img src='images/hangman6.png'></img>");
 
   var guessWordLetterDivs = $('div.guess > div')
 
@@ -73,17 +73,43 @@ $(document).ready(function() {
 
   function subtractLives() {
     errors++;
-    if (errors > 5) {
-      $('div.hangman-image').html("")
-      $('div.hangman-image').append("<img src='images/hangman-full.png' ></img>")
-      for (var i = 0; i < guessWordLetterDivs.length; i++) { guessWordLetterDivs[i].style['color'] = 'black' }
-    } else {
-    var imageTag = "<img src='" + hangmanImage[errors-1] + "' ></img>"
-    $('div.hangman-image').html("")
-    $('div.hangman-image').append(imageTag);
-  }}
+    // console.log("errors: " + errors);
+    switch (errors) {
+      case 1:
+        console.log("errors is 1")
+          $('#hangman6').css("display", "none");
+          $('#hangman5').css("display", "inline-block");
+        break;
+      case 2:
+        console.log("errors is 2")
+        break;
+      case 3:
+        console.log("errors is 3")
+        break;
+      case 4:
+        console.log("errors is 4")
+        break;
+      case 5:
+        console.log("errors is 5")
+        break;
+      case 6:
+        console.log("errors is 6")
+        break;
+      default:
+        console.log("default")
+    }
+  //   if (errors > 5) {
+  //     $('div.hangman-image').html("")
+  //     $('div.hangman-image').append("<img src='images/hangman-full.png' ></img>")
+  //     for (var i = 0; i < guessWordLetterDivs.length; i++) { guessWordLetterDivs[i].style['color'] = 'black' }
+  //   } else {
+  //   var imageTag = "<img src='" + hangmanImage[errors-1] + "' ></img>"
+  //   $('div.hangman-image').html("")
+  //   $('div.hangman-image').append(imageTag);
+  // }
+}
 
-  // })
+
 
 
 });

@@ -149,6 +149,34 @@ i {
 }
 
 /*styling for hangman game*/
+#hangman6 {
+  z-index: 7;
+}
+#hangman5 {
+  z-index: 6;
+  display: none;
+}
+#hangman4 {
+  z-index: 5;
+  display: none;
+}
+#hangman3 {
+  z-index: 4;
+  display: none;
+}
+#hangman2 {
+  z-index: 3;
+  display: none;
+}
+#hangman1 {
+  z-index: 2;
+  display: none;
+}
+#hangman-full {
+  z-index: 1;
+  display: none;
+}
+
 ul.alphabet {
   list-style-type: none;
 }
@@ -187,7 +215,7 @@ div#skills-section {
   padding: 10px;
   text-align: center;
   position: relative;
-  height: auto;
+  height: 110%;
 }
 
 #skills-game {
