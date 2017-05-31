@@ -236,13 +236,9 @@ dealCards();
 
 $("#show-all-skills").on("click", function(e) {
   e.preventDefault();
-  $('div.skill').addClass("flip");
-})
-
-$("#show-all-skills").on("click", function(e) {
-  e.preventDefault();
   $('#number-of-matches').text("Matches: 10/10")
   $('div.skill').addClass("flip");
+  $('.modal').fadeIn(1000);
 })
 
 $("#reset-all-skills").on("click", function(e) {
