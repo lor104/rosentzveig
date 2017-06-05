@@ -1,3 +1,8 @@
+:root {
+  --green: #2BB673;
+  --grey: #6D6E71;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', serif;
@@ -22,7 +27,7 @@ h1, h2, .header h3 {
   padding-top: 30px;
   height: 250px;
   text-align: center;
-  background-color: #2BB673;
+  background-color: var(--green);
   color: white;
   width: 100%;
   position: relative;
@@ -44,7 +49,7 @@ h1.border {
 }
 
 h1.border span {
-  background: #2BB673;
+  background: var(--green);
 }
 
 h1.border:before {
@@ -59,13 +64,13 @@ h1.border:before {
     margin-bottom: 3%;
     position: relative;
     text-align: center;
-    color: #2BB673;
+    color: var(--green);
 }
 
 .border:before{
     content: "";
     display: block;
-    border-top: dotted 3px #6D6E71;
+    border-top: dotted 3px var(--grey);
     width: 100%;
     height: 1px;
     position: absolute;
@@ -103,9 +108,9 @@ ul {
 }
 
 a {
-  color: #6D6E71;
+  color: var(--grey);
   text-decoration: none;
-  border: 1px solid #6D6E71;
+  border: 1px solid var(--grey);
   border-radius: 4px;
   padding: 3px 10px;
   margin: 3px;
@@ -114,7 +119,7 @@ a {
 li a {
   text-decoration: none;
   color: black;
-  border: 1px solid #2BB673;
+  border: 1px solid var(--green);
   border-radius: 4px;
   padding: 10px;
   margin: 3px;
@@ -123,6 +128,12 @@ li a {
 
 li a:hover {
   color: white;
+}
+
+div#contact-section {
+  background: url('images/planes.png') no-repeat right;
+  background-size: 34.5%;
+
 }
 
 #contact-section a {
@@ -141,7 +152,7 @@ i {
   width: 33%;
   margin: 12px 33%;
   text-align: right;
-
+  background: rgba(255,255,255,0.9);
 }
 
 #experience-section {
@@ -192,8 +203,8 @@ li.letter {
 
 li.letter:hover {
   color: white;
-  background-color: #2BB673;
-  border-color: #6D6E71;
+  background-color: var(--green);
+  border-color: var(--grey);
 }
 
 div.guess div {
@@ -210,7 +221,7 @@ div.guess div {
 
 /*styling for concentration game*/
 div#skills-section {
-  border: double 6px #6D6E71;
+  border: double 6px var(--grey);
   background-color: rgba(179, 179, 179, 0.1);
   padding: 10px;
   text-align: center;

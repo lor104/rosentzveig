@@ -82,18 +82,29 @@ $(document).ready(function() {
         break;
       case 2:
         console.log("errors is 2")
+        $('#hangman5').css("display", "none");
+        $('#hangman4').css("display", "inline-block");
         break;
       case 3:
         console.log("errors is 3")
+        $('#hangman4').css("display", "none");
+        $('#hangman3').css("display", "inline-block");
         break;
       case 4:
         console.log("errors is 4")
+        $('#hangman3').css("display", "none");
+        $('#hangman2').css("display", "inline-block");
         break;
       case 5:
         console.log("errors is 5")
+        $('#hangman2').css("display", "none");
+        $('#hangman1').css("display", "inline-block");
         break;
       case 6:
         console.log("errors is 6")
+        $('#hangman1').css("display", "none");
+        $('#hangman-full').css("display", "inline-block");
+        for (var i = 0; i < guessWordLetterDivs.length; i++) { guessWordLetterDivs[i].style['color'] = 'black' }
         break;
       default:
         console.log("default")
