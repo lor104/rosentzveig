@@ -230,6 +230,10 @@ div#skills-section {
 }
 
 #skills-game {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 20%;
   width: 60%;
   text-align: center;
@@ -250,12 +254,11 @@ div#skills-section {
 
 
 div.skill {
-  display: inline-block;
-  float: left;
+  flex-basis: 20%;
 }
 
-.card5, .card10, .card15 {
-  clear: left;
+div.skill.card0, div.skill.card5, div.skill.card10, div.skill.card15 {
+  flex-wrap: wrap;
 }
 
 div.skill img {
