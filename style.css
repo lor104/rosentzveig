@@ -123,6 +123,11 @@ a {
   margin: 3px;
 }
 
+#projects-section > p{
+  margin-bottom: 6px;
+  margin-top: 20px;
+}
+
 li a {
   text-decoration: none;
   color: #2e2d2e;
