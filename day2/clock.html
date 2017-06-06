@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+<body>
+
+
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hour hour12">12</div>
+        <div class="hour hour3">3</div>
+        <div class="hour hour6">6</div>
+        <div class="hour hour9">9</div>
+        <div class="hour hour1">1</div>
+        <div class="hour hour2">2</div>
+        <div class="hour hour4">4</div>
+        <div class="hour hour5">5</div>
+        <div class="hour hour7">7</div>
+        <div class="hour hour8">8</div>
+        <div class="hour hour10">10</div>
+        <div class="hour hour11">11</div>
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+
+
+  <style>
+    html {
+      background:#018DED url(https://cdn.pixabay.com/photo/2015/11/07/11/32/forest-1031233_960_720.jpg);
+      background-size:cover;
+      font-family:'myriad pro';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display:flex;
+      flex:1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border:20px solid white;
+      border-radius:50%;
+      margin:50px auto;
+      position: relative;
+      padding:6rem;
+      background-color: rgba(0,0,0,0.4);
+      box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width:50%;
+      height:6px;
+      background: white;
+      position: absolute;
+      top:50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition-timing-function: cubic-bezier(0.09, 2.71, 0.58, 1);
+    }
+
+    .second-hand {
+      width:60%;
+      left: -10%;
+      background: #d5d5d5;
+    }
+    .min-hand {
+      width:55%;
+      left: -5%;
+    }
+    .hour-hand {
+      width:40%;
+      left: 10%;
+    }
+
+    .hour {
+      position: absolute;
+      font-size: 2.7em;
+      color: white;
+    }
+    .hour12 {
+      left: calc(50% - 33px);
+      top: -14%;
+    }
+    .hour3 {
+      right: -13%;
+      top: calc(50% - 30px);
+    }
+    .hour6 {
+      left: calc(50% - 16px);
+      bottom: -18%;
+    }
+    .hour9 {
+      left: -13%;
+      top: calc(50% - 30px);
+    }
+    .hour1 {
+      left: calc(75% - 6px);
+      top: -6%;
+    }
+    .hour2 {
+      left: calc(95% - 4px);
+      top: 12%;
+    }
+    .hour4 {
+      left: calc(95% - 4px);
+      bottom: 10%;
+    }
+    .hour5 {
+      left: calc(75% - 6px);
+      bottom: -10%;
+    }
+    .hour7 {
+      right: calc(75% - 6px);
+      bottom: -10%;
+    }
+    .hour8 {
+      right: calc(95% - 4px);
+      bottom: 10%;
+    }
+    .hour10 {
+      right: calc(95% - 20px);
+      top: 12%;
+    }
+    .hour11 {
+      right: calc(75% - 20px);
+      top: -6%;
+    }
+
+  </style>
+
+  <script>
+    var secondHand = document.querySelector('.second-hand');
+    var minHand = document.querySelector('.min-hand');
+    var hourHand = document.querySelector('.hour-hand');
+
+    function setDate() {
+      const now = new Date();
+
+      const seconds = now.getSeconds();
+      const secondsDegrees = ((seconds / 60) * 360) + 90;
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+      const mins = now.getMinutes();
+      const minsDegrees = ((mins / 60) * 360) + 90;
+      minHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+      const hours = now.getHours();
+      const hoursDegrees = ((hours / 12) * 360) + 90;
+      hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+    }
+
+  setInterval(setDate, 1000);
+
+  </script>
+</body>
+</html>

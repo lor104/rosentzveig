@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dial Pad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+  <div class="keys">
+    <div id="dial">
+      <span id="dial-number"></span>
+    </div>
+    <div data-key="49" class="key">
+      <span class="letters extra">*</span>
+      <kbd>1</kbd>
+    </div>
+    <div data-key="50" class="key">
+      <span class="letters">ABC</span>
+      <kbd>2</kbd>
+    </div>
+    <div data-key="51" class="key">
+      <span class="letters">DEF</span>
+      <kbd>3</kbd>
+    </div>
+    <div data-key="52" class="key">
+      <span class="letters">GHI</span>
+      <kbd>4</kbd>
+    </div>
+    <div data-key="53" class="key">
+      <span class="letters">JKL</span>
+      <kbd>5</kbd>
+    </div>
+    <div data-key="54" class="key">
+      <span class="letters">MNO</span>
+      <kbd>6</kbd>
+    </div>
+    <div data-key="55" class="key">
+      <span class="letters">PQRS</span>
+      <kbd>7</kbd>
+    </div>
+    <div data-key="56" class="key">
+      <span class="letters">TUV</span>
+      <kbd>8</kbd>
+    </div>
+    <div data-key="57" class="key">
+      <span class="letters">WXYZ</span>
+      <kbd>9</kbd>
+    </div>
+    <div data-key="" class="key extra">
+      <span class="letters extra">*</span>
+      <kbd>0</kbd>
+    </div>
+    <div data-key="48" class="key">
+      <span class="letters extra">*</span>
+      <kbd>0</kbd>
+    </div>
+    <div data-key="" class="key extra">
+      <span class="letters extra">*</span>
+      <kbd>0</kbd>
+    </div>
+  </div>
+
+  <audio data-key="49" src="phonesounds/1.wav"></audio>
+  <audio data-key="50" src="phonesounds/2.wav"></audio>
+  <audio data-key="51" src="phonesounds/3.wav"></audio>
+  <audio data-key="52" src="phonesounds/4.wav"></audio>
+  <audio data-key="53" src="phonesounds/5.wav"></audio>
+  <audio data-key="54" src="phonesounds/6.wav"></audio>
+  <audio data-key="55" src="phonesounds/7.wav"></audio>
+  <audio data-key="56" src="phonesounds/8.wav"></audio>
+  <audio data-key="57" src="phonesounds/9.wav"></audio>
+  <audio data-key="48" src="phonesounds/0.wav"></audio>
+  <audio id="ringtone" src="phonesounds/ring.wav"></audio>
+
+<script>
+  var string = "";
+  var ring = document.getElementById("ringtone");
+  ring.loop = true;
+
+  function dialKey(e) {
+    if (string.length === 18) {
+      return;
+    }
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if(!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add('dialed');
+    string += e.key ;
+    console.log(string);
+    switch(string.length) {
+      case 3:
+        string = "(" + string + ") - "
+        break;
+      case 11:
+        string += " - "
+      default:
+    }
+    if (string.length < 18) {dialNumber();}
+    else {dialNumber();
+      ring.play();}
+  }
+
+  function clickKey(e) {
+
+    const codeKey = e.target.parentNode.attributes["data-key"].nodeValue;
+    const codeKeyNumber = e.target.innerHTML;
+    if (string.length === 18) {
+      return;
+    }
+    const audio = document.querySelector(`audio[data-key="${codeKey}"]`);
+    const key = document.querySelector(`.key[data-key="${codeKey}"]`);
+    if(!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add('dialed');
+    string += codeKeyNumber ;
+    console.log(string);
+    switch(string.length) {
+      case 3:
+        string = "(" + string + ") - "
+        break;
+      case 11:
+        string += " - "
+      default:
+    }
+    if (string.length < 18) {dialNumber();}
+    else {dialNumber();
+      ring.play();}
+  }
+
+  function dialNumber(e) {
+    numberField = document.getElementById("dial-number")
+    numberField.innerHTML = string;
+  }
+
+  function removeTransition(e) {
+    if (e.propertyName !== ('transform')) return;
+    this.classList.remove('dialed')
+  }
+
+  const keys = document.querySelectorAll('.key');
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  keys.forEach(key => key.addEventListener('click', clickKey));
+
+  window.addEventListener('keydown', dialKey);
+
+</script>
+
+
+</body>
+</html>

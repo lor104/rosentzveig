@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead Colors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="Colors">
+    <ul class="suggestions">
+      <li>Filter for a color</li>
+      <li>or a hex code</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://raw.githubusercontent.com/cheprasov/json-colors/master/colors.json';
+
+const colors = [];
+fetch(endpoint)
+  .then(blob => blob.json())
+  .then(data => colors.push(...data));
+
+function findMatches(wordToMatch, colors) {
+  return colors.filter(color => {
+    // here we need to figure out if the city or state matches what was searched
+    const regex = new RegExp(wordToMatch, 'gi');
+    return color.name.match(regex) || color.hex.match(regex)
+  });
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function displayMatches() {
+  const matchArray = findMatches(this.value, colors);
+  const html = matchArray.map(color => {
+    const regex = new RegExp(this.value, 'gi');
+    const colorName = color.name.replace(regex, `<span class="hl">${this.value}</span>`);
+
+    return `
+      <li>
+        <span class="name">${colorName}</span>
+        <span class="hex">${color.hex}</span>
+      </li>
+    `
+  }).join('');
+  suggestions.innerHTML = html;
+  const hexCodeArray = document.querySelectorAll(".hex");
+  hexCodeArray.forEach(hex => hex.style.setProperty('background', hex.innerText))
+}
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
+
+
+</script>
+  </body>
+</html>
