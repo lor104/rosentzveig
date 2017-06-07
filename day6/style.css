@@ -5,7 +5,7 @@ html {
   box-sizing: border-box;
   background: url(../images/flower-swirl10.png);
   background-color: var(--background);
-  font-family:'helvetica neue';
+  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   font-weight: 200;
 }
