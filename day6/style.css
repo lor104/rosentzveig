@@ -1,9 +1,10 @@
 :root {
-  --background: #cffbbf;
+  --background: #2BB673;
 }
 html {
   box-sizing: border-box;
-  background:var(--background);
+  background: url(../images/flower-swirl10.png);
+  background-color: var(--background);
   font-family:'helvetica neue';
   font-size: 20px;
   font-weight: 200;
