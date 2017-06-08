@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="wrapper-image"></div>
+  </div>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+  //set up canvas for drawing
+  const canvas = document.querySelector('#draw');
+  const ctx = canvas.getContext('2d');
+  var wrapper=document.getElementById('wrapper');
+  var wrapperStyle=window.getComputedStyle(wrapper,null);
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.fillStyle = '#2BB673';
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+  ctx.lineWidth = 90;
+  ctx.globalCompositeOperation = 'destination-out'
+
+//use to make sure that drawing only happens when clickling
+let isDrawing = false;
+
+//set up the last x and y coordinates, will constantly be changing when mouse is clicked
+let lastX = 0;
+let lastY = 0;
+
+function draw(e) {
+  if(!isDrawing) return; //stop the function from running unless the mouse is down
+
+  ctx.beginPath();
+  //start from
+  ctx.moveTo(lastX, lastY);
+  // go to
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.stroke();
+
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+
+}
+
+//make sure the mouse is clicked/down to be able to draw
+canvas.addEventListener('mousedown', (e) => {
+  isDrawing = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+});
+
+
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false);
+
+</script>
+
+<style>
+  html, body {
+    margin:0;
+    height: 100%;
+  }
+  #wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  #wrapper-image {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: url('LaurenRosentzveig--ResumeWD.jpg') content-box center no-repeat;
+    background-size: contain;
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  h1 {
+    position: absolute;
+    font-size: 3em;
+    top: 40%;
+    left: 40%;
+  }
+</style>
+
+</body>
+</html>
