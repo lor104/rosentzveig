@@ -33,11 +33,6 @@ h1, h2, .header h3 {
   color: white;
   width: 100%;
   position: relative;
-  /*display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: wrap;
-  flex-basis: 100%;*/
 }
 
 nav {
