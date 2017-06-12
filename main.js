@@ -21,7 +21,6 @@ $(document).ready(function() {
 
   // $('.info').append(allWords[round].hint)
   var guessWord = "Hoptimal".toLowerCase().split("");
-  console.log(guessWord)
 
   // append the letters to divs, giving the divs the class name as the letter
   for (var i = 0; i < guessWord.length; i++) {
@@ -73,41 +72,34 @@ $(document).ready(function() {
 
   function subtractLives() {
     errors++;
-    // console.log("errors: " + errors);
     switch (errors) {
       case 1:
-        console.log("errors is 1")
           $('#hangman6').css("display", "none");
           $('#hangman5').css("display", "inline-block");
         break;
       case 2:
-        console.log("errors is 2")
         $('#hangman5').css("display", "none");
         $('#hangman4').css("display", "inline-block");
         break;
       case 3:
-        console.log("errors is 3")
         $('#hangman4').css("display", "none");
         $('#hangman3').css("display", "inline-block");
         break;
       case 4:
-        console.log("errors is 4")
         $('#hangman3').css("display", "none");
         $('#hangman2').css("display", "inline-block");
         break;
       case 5:
-        console.log("errors is 5")
         $('#hangman2').css("display", "none");
         $('#hangman1').css("display", "inline-block");
         break;
       case 6:
-        console.log("errors is 6")
         $('#hangman1').css("display", "none");
         $('#hangman-full').css("display", "inline-block");
         for (var i = 0; i < guessWordLetterDivs.length; i++) { guessWordLetterDivs[i].style['color'] = 'black' }
         break;
       default:
-        console.log("default")
+
     }
   //   if (errors > 5) {
   //     $('div.hangman-image').html("")
@@ -202,7 +194,6 @@ $(document).ready(function() {
   })
 
   function checkMatch(firstChoice, secondChoice, firstChoiceDiv, secondChoiceDiv) {
-    console.log(firstChoice, secondChoice, firstChoiceDiv, secondChoiceDiv)
     clicks = 0;
     if (firstChoice === secondChoice) {
       $("." + firstChoiceDiv).toggleClass("stay");
@@ -210,7 +201,6 @@ $(document).ready(function() {
       matches++;
       $('#number-of-matches').text("Matches: " + matches + "/10")
       if (matches === 10) {
-        console.log("winner winner chicken dinner")
         $('.modal').fadeIn(2000);
       }
       return true;
@@ -290,5 +280,47 @@ $("#reset-all-skills").on("click", function(e) {
   // reDealCards();
 })
 
+//KONAMI code for keypress recognition
+const pressed = [];
+const secretCode = 'ArrowUpArrowDownArrowUpArrowDownArrowLeftArrowRight';
+
+window.addEventListener('keyup', (e) => {
+  pressed.push(e.key);
+  //if using word characters (-secretCode.length - 1, pressed.length - secretCode.length)
+  pressed.splice(-7, pressed.length - 6);
+  if (pressed.join('').includes(secretCode)) {
+    text_replace();
+  }
+});
+
+var text_replace = function() {
+  // Replace text.
+  var hc = 6;
+  var hs;
+  var h;
+  var k;
+  var words = ['Delightful','Fantastic','Pleasing','Fun','Magical','Lovely','Captivating','Charming','Amazing','Wonderful'];
+  while(hc >= 1) {
+    hs = document.getElementsByTagName('h' + hc);
+    for (k = 0; k < hs.length; k++) {
+      h = hs[k];
+      h.innerHTML = words[Math.floor(Math.random()*words.length)] + ' ' + h.innerHTML;
+      if (hc === 2) {
+        h.class = "border"
+        var inside = h.innerText;
+        h.innerHTML = `<span> ${inside} </span>`;
+      }
+    }
+    hc-=1;
+  }
+};
+
+const reveal = document.querySelector('#reveal-code');
+reveal.addEventListener('click', function(e) {
+  e.preventDefault;
+  reveal.innerText = "↑ ↓ ↑ ↓ ← →";
+  reveal.id = "";
+
+})
 
 });
