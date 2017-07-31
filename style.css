@@ -1,6 +1,7 @@
 :root {
   --green: #2BB673;
   --grey: #6D6E71;
+  --white: #feffff;
 }
 
 * {
@@ -24,11 +25,12 @@ h1, h2, .header h3 {
 
 .header {
   margin: auto 0;
-  padding-top: 30px;
-  height: 250px;
+  padding-top: 80px;
+  height: 475px;
   text-align: center;
-  background: url('images/flower-swirl10.png');
-  background-color: var(--green);
+  background: url('images/background.png');
+  background-size: contain;
+  background-color: var(--white);
   background-repeat: repeat;
   color: white;
   width: 100%;
@@ -147,10 +149,23 @@ li a:hover {
   color: white;
 }
 
+p#about-me-text {
+  position: relative;
+  width: 80%;
+  left: 2%;
+}
+
+img#profile-img {
+  position: relative;
+  float: right;
+  width: 120px;
+  padding-top: 3px;
+  right: 2%;
+}
+
 div#contact-section {
   background: url('images/planes.png') no-repeat right;
   background-size: 34.5%;
-
 }
 
 #contact-section a {
