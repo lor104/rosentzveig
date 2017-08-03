@@ -1,4 +1,73 @@
+/*
+fonts:
+title: gotham bold
+text: courier
+*/
 
+
+:root {
+  --background: #FEFFF3;
+  --foreground: #ECFFEE;
+  --highlight: #FFF2DD;
+  --highlight2: #EEECFE;
+  --black: #000000;
+}
+
+* {
+  font-family: 'courier';
+}
+
+h1, h2, h3 {
+  font-family: 'Gotham';
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+html {
+  background-color: var(--background);
+}
+
+.header {
+  background-color: var(--foreground);
+}
+
+.header {
+  margin: auto 0;
+  padding-top: 80px;
+  height: 475px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 20px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 3px 10px;
+  margin: 3px;
+}
+
+a.no-style {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin: 0;
+}
+
+
+nav {
+  padding: 5px 0;
+}
 
 div#contact-section {
   background: url('images/planes.png') no-repeat right;
@@ -68,9 +137,9 @@ li.letter {
 }
 
 li.letter:hover {
-  color: white;
-  background-color: var(--green);
-  border-color: var(--grey);
+  /*color: white;*/
+  background-color: var(--foreground);
+  /*border-color: var(--highlight2);*/
 }
 
 div.guess div {
@@ -87,9 +156,7 @@ div.guess div {
 
 /*styling for concentration game*/
 div#skills-section {
-  border: double 6px var(--grey);
-  /*background: url('images/flower-swirl10.png');*/
-  background-color: rgba(179, 179, 179, 0.1);
+  background-color: var(--highlight2);
   padding: 10px;
   text-align: center;
   position: relative;
