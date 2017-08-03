@@ -1,0 +1,201 @@
+
+
+div#contact-section {
+  background: url('images/planes.png') no-repeat right;
+  background-size: 34.5%;
+}
+#contact-section a {
+  position: relative;
+}
+
+i {
+  padding-right: 10px;
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+#contact-section a {
+  display: block;
+  width: 33%;
+  margin: 12px 33%;
+  text-align: right;
+  background: rgba(255,255,255,0.9);
+}
+#experience-section {
+  clear:both;
+}
+
+/*styling for hangman game*/
+#hangman6 {
+  z-index: 7;
+}
+#hangman5 {
+  z-index: 6;
+  display: none;
+}
+#hangman4 {
+  z-index: 5;
+  display: none;
+}
+#hangman3 {
+  z-index: 4;
+  display: none;
+}
+#hangman2 {
+  z-index: 3;
+  display: none;
+}
+#hangman1 {
+  z-index: 2;
+  display: none;
+}
+#hangman-full {
+  z-index: 1;
+  display: none;
+}
+
+ul.alphabet {
+  list-style-type: none;
+}
+
+li.letter {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 9px;
+}
+
+li.letter:hover {
+  color: white;
+  background-color: var(--green);
+  border-color: var(--grey);
+}
+
+div.guess div {
+  display: inline-block;
+  width: 20px;
+  color: white;
+  text-align: center;
+  margin: 10px;
+  padding: 0 2px 5px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+}
+
+/*styling for concentration game*/
+div#skills-section {
+  border: double 6px var(--grey);
+  /*background: url('images/flower-swirl10.png');*/
+  background-color: rgba(179, 179, 179, 0.1);
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  height: 110%;
+}
+
+#skills-game {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 20%;
+  text-align: center;
+}
+
+#reset-all-skills {
+  margin: 2% 44% 0;
+  width: 12%;
+  display: block;
+  clear: both;
+  border-color: white;
+  color: white;
+}
+
+#number-of-matches {
+  clear:both;
+}
+
+
+div.skill {
+  flex-basis: 20%;
+}
+
+div.skill.card0, div.skill.card5, div.skill.card10, div.skill.card15 {
+  flex-wrap: wrap;
+}
+
+div.skill img {
+  width: 120px;
+  padding: 5px;
+}
+
+.face {
+  /*z-index: 2;*/
+  /*position: absolute;*/
+
+}
+
+.front {
+  position: absolute;
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.flip {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.stay img.front {
+  visibility: hidden;
+}
+
+.stay img.back {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.return {
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(179, 179, 179, 0.95);
+  z-index: 100;
+  display: none;
+  color: white;
+  overflow: auto;
+}
+
+img.modal-skills {
+  width: 120px;
+  clear: both;
+  margin: 0 5px;
+}
+
+.modal h1 {
+  width: 100%;
+  text-align: center;
+}
+
+#number-of-matches {
+  margin-bottom: 10px;
+}
