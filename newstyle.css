@@ -26,7 +26,7 @@ h1, h2, h3, h2.border span {
   font-family: 'Gotham';
   font-weight: bold;
   text-transform: uppercase;
-  /*letter-spacing: 10px;*/
+  letter-spacing: 8px;
 }
 
 p {
@@ -68,6 +68,20 @@ a {
   color: black;
 }
 
+li a {
+}
+
+a span {
+  position: relative;
+  top: 4px;
+  padding-right: 5px;
+  font-size: 1.8em;
+  height: 0;
+  line-height: 0;
+  margin-bottom: 0;
+  color: var(--foreground);
+}
+
 a.no-style {
   border: none;
   padding: 0;
@@ -85,6 +99,12 @@ h2.border {
 h2.border span {
   padding: 0 20px;
   color: black;
+}
+
+hr {
+  width: 35px;
+  height: 1px;
+  background-color: black;
 }
 
 
