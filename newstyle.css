@@ -134,8 +134,9 @@ i {
   padding: 8px 10px;
   margin: 3px;
   display: block;
-  width: 33%;
-  margin: 12px 33%;
+  /*width: 33%;*/
+  margin: 12px 23%;
+  min-width: 300px;
   text-align: right;
   background: rgba(255,255,255,0.9);
 }
