@@ -323,4 +323,28 @@ reveal.addEventListener('click', function(e) {
 
 })
 
+//hover functions for nav bar
+
+const navLinks = document.querySelectorAll('nav a');
+
+function navHover(e) {
+  hoverOff();
+  this.children[0].style.color = "var(--highlight)";
+}
+
+function hoverOff() {
+  navLinks.forEach(link => link.lastElementChild.style.color = "var(--foreground)")
+}
+
+function clickNav(e) {
+  e.preventDefault()
+  console.log(this.children[0].style.color = "var(--highlight)")
+  console.log('clicked')
+}
+
+navLinks.forEach(link => link.addEventListener('mouseover', navHover));
+navLinks.forEach(link => link.addEventListener('mouseleave', hoverOff));
+
+navLinks.forEach(link => link.addEventListener('click', clickNav));
+
 });
