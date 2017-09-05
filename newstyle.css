@@ -10,6 +10,7 @@ text: courier
   --foreground: #ECFFEE;
   --highlight: #FFF2DD;
   --highlight2: #EEECFE;
+  --highlight3: #F4FED3;
   --black: #000000;
 }
 
@@ -137,6 +138,24 @@ p#about-me-text > span {
 #experience-section {
   clear:both;
 }
+
+#education-section h3 {
+  padding: 15px;
+  margin: 0 15%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+}
+
+h3#bitmaker {
+  background-color: var(--highlight3);
+}
+
+h3#queens {
+  background-color: var(--highlight2);
+}
 /*CURRENT PROJECTS SECTION */
 
 
@@ -255,7 +274,6 @@ div#skills-section {
   flex: 1;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 20%;
   text-align: center;
 }
 

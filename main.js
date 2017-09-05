@@ -149,7 +149,7 @@ $(document).ready(function() {
 
   cardDivs = [".card0", ".card1", ".card2", ".card3", ".card4", ".card5", ".card6", ".card7", ".card8", ".card9", ".card10", ".card11", ".card12", ".card13", ".card14", ".card15", ".card16", ".card17", ".card18", ".card19", ]
 
-  var front_img = "images/logo-2.png"
+  var front_img = "images/logo3.png"
   shuffleCards(skills)
 
   function dealCards() {
