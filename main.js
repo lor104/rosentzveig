@@ -349,6 +349,7 @@ function clickNav(e) {
 
 navLinks.forEach(link => link.addEventListener('click', clickNav));
 
-
+document.querySelector('div#me-section').style.display = "block";
+document.querySelector('nav a').classList.value += "toggleNav"
 
 });
