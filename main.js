@@ -324,19 +324,20 @@ reveal.addEventListener('click', function(e) {
 })
 
 //hover functions for nav bar
-
-
 const navLinks = document.querySelectorAll('nav a');
 
+//reset nav highlight before displaying new
 function resetNav(e) {
   navLinks.forEach(link => link.classList = "")
 }
 
+//reset content before displaying new
 function resetContent(e) {
   const contentAll = document.querySelectorAll('main > div');
   contentAll.forEach(div => div.style.display = "none")
 }
 
+//click a nav element, highlight nav link and show hidden content
 function clickNav(e) {
   e.preventDefault()
   resetNav(e);
@@ -348,16 +349,6 @@ function clickNav(e) {
 
 navLinks.forEach(link => link.addEventListener('click', clickNav));
 
-
-// functions for hiding and showing content
-document.querySelector('#me-section').display = "none";
-const contentEducation = document.querySelector('#education-section');
-const contentSkills = document.querySelector('#skills-section');
-const contentCProjects = document.querySelector('#projects-section');
-const contentPProjects = document.querySelector('#experience-section');
-const contentContact = document.querySelector('#contact-section');
-
-const contentAll = document.querySelectorAll('main > div');
 
 
 });
