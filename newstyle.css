@@ -95,10 +95,6 @@ nav a:hover span {
   color: var(--highlight);
 }
 
-a.cProject {
-  font-weight: bold;
-}
-
 nav {
   padding: 5px 0;
 }
@@ -157,7 +153,21 @@ h3#queens {
   background-color: var(--highlight2);
 }
 /*CURRENT PROJECTS SECTION */
+a.cProject {
+  font-weight: bold;
+  padding: 5px;
+  background-color: var(--highlight2);
+}
 
+span.js-title {
+  line-height: 3em;
+  padding: 15px 0 5px;
+  border-top: 5px solid var(--highlight3);
+}
+
+#projects-section p {
+  margin-top: 50px;
+}
 
 /*CONTACT SECTION */
 div#contact-section {
