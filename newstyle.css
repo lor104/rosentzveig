@@ -90,6 +90,10 @@ a.no-style {
   color: var(--highlight);
 }
 
+nav a:hover span {
+  color: var(--highlight);
+}
+
 a.cProject {
   font-weight: bold;
 }

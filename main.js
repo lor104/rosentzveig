@@ -325,25 +325,19 @@ reveal.addEventListener('click', function(e) {
 
 //hover functions for nav bar
 
+
 const navLinks = document.querySelectorAll('nav a');
 
-function navHover(e) {
-  hoverOff();
-  this.children[0].style.color = "var(--highlight)";
-}
-
-function hoverOff() {
-  navLinks.forEach(link => link.lastElementChild.style.color = "var(--foreground)")
+function resetNav(e) {
+  navLinks.forEach(link => link.classList = "")
 }
 
 function clickNav(e) {
   e.preventDefault()
-  console.log(this.children[0].style.color = "var(--highlight)")
-  console.log('clicked')
-}
+  resetNav(e);
+  e.path[0].classList.value += "toggleNav"
 
-navLinks.forEach(link => link.addEventListener('mouseover', navHover));
-navLinks.forEach(link => link.addEventListener('mouseleave', hoverOff));
+}
 
 navLinks.forEach(link => link.addEventListener('click', clickNav));
 
