@@ -39,6 +39,11 @@ main {
   margin-left: 15%;
   padding-top: 20px;
 }
+
+main > div {
+  display: none;
+}
+
 .header {
   background-color: var(--foreground);
 }

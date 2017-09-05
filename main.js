@@ -332,13 +332,32 @@ function resetNav(e) {
   navLinks.forEach(link => link.classList = "")
 }
 
+function resetContent(e) {
+  const contentAll = document.querySelectorAll('main > div');
+  contentAll.forEach(div => div.style.display = "none")
+}
+
 function clickNav(e) {
   e.preventDefault()
   resetNav(e);
-  e.path[0].classList.value += "toggleNav"
-
+  resetContent(e)
+  e.path[0].classList.value += "toggleNav";
+  const content = $(this).attr('href');
+  document.querySelector(content).style.display = "block"
 }
 
 navLinks.forEach(link => link.addEventListener('click', clickNav));
+
+
+// functions for hiding and showing content
+document.querySelector('#me-section').display = "none";
+const contentEducation = document.querySelector('#education-section');
+const contentSkills = document.querySelector('#skills-section');
+const contentCProjects = document.querySelector('#projects-section');
+const contentPProjects = document.querySelector('#experience-section');
+const contentContact = document.querySelector('#contact-section');
+
+const contentAll = document.querySelectorAll('main > div');
+
 
 });
