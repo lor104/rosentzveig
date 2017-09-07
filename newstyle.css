@@ -11,8 +11,12 @@ text: courier
   --highlight: #FFF2DD;
   --highlight2: #EEECFE;
   --highlight3: #F4FED3;
-  --highlight4: #f2cffb;
+  --highlight4: #F2CFFB;
   --black: #000000;
+  --highlight-o: rgba(#FFF2DD, 0.95);
+  --highlight2-o: rgba(#EEECFE, 0.95);
+  --highlight3-o: rgba(#F4FED3, 0.95);
+  --highlight4-o: rgba(#F2CFFB, 0.95);
 }
 
 * {
