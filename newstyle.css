@@ -13,10 +13,10 @@ text: courier
   --highlight3: #F4FED3;
   --highlight4: #F2CFFB;
   --black: #000000;
-  --highlight-o: rgba(#FFF2DD, 0.95);
-  --highlight2-o: rgba(#EEECFE, 0.95);
-  --highlight3-o: rgba(#F4FED3, 0.95);
-  --highlight4-o: rgba(#F2CFFB, 0.95);
+  --highlight-o: rgba(255, 242, 221, 0.7);
+  --highlight2-o: rgba(238, 236, 254, 0.7);
+  --highlight3-o: rgba(244, 254, 211, 0.7);
+  --highlight4-o: rgba(242, 207, 251, 0.7);
 }
 
 * {
@@ -224,6 +224,22 @@ i {
   min-width: 300px;
   text-align: right;
   background: rgba(255,255,255,0.9);
+}
+
+#contact-section #contact-email {
+  background-color: var(--highlight-o);
+}
+
+#contact-section #contact-phone {
+  background-color: var(--highlight2-o);
+}
+
+#contact-section #contact-linkedin {
+  background-color: var(--highlight3-o);
+}
+
+#contact-section #contact-github {
+  background-color: var(--highlight4-o);
 }
 
 /*a {
