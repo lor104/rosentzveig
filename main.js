@@ -50,10 +50,10 @@ $(document).ready(function() {
 
   //letters turn black when clicked
   $("li.letter").on("click", function(e) {
-    if ($(this).css("background-color") === "rgba(179, 179, 179, 0.3)") {
+    if ($(this).css("background-color") === "#EEECFE") {
       return;
     }
-    $(this).css("background-color", "rgba(179, 179, 179, 0.3)");
+    $(this).css("background-color", "#EEECFE");
     letterSelected = $(this).text()
     guessCorrect = false;
       for (var i = 0; i < guessWordLetterDivs.length; i++) {
@@ -269,12 +269,16 @@ $("#show-all-skills").on("click", function(e) {
 })
 
 $("#reset-all-skills").on("click", function(e) {
-  location.reload();
+  // location.reload();
+  document.querySelector('div#skills-section').style.display = "block";
+  const links = document.querySelectorAll('nav a')
+  links[2].classList.value += "toggleNav"
+
   // e.preventDefault();
   // matches = 0;
   // clicks = 0;
   // $('#number-of-matches').text("Matches: 0/10");
-  // $('.modal').css("display", "none");
+  $('.modal').css("display", "none");
   // $('div.skill').removeClass("flip");
   // $('div.skill').removeClass("stay");
   // reDealCards();
