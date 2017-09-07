@@ -11,6 +11,7 @@ text: courier
   --highlight: #FFF2DD;
   --highlight2: #EEECFE;
   --highlight3: #F4FED3;
+  --highlight4: #f2cffb;
   --black: #000000;
 }
 
@@ -32,16 +33,19 @@ h1, h2, h3, h2.border span {
 
 p {
   letter-spacing: 5px;
+  line-height: 1.5em;
 }
 
 main {
-  width: 70%;
-  margin-left: 15%;
-  padding-top: 20px;
+  /*width: 70%;*/
+  /*margin-left: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;*/
 }
 
 main > div {
   display: none;
+  padding: 3% 15%;
 }
 
 .header {
@@ -97,7 +101,7 @@ a.no-style {
 }
 
 nav a:hover span {
-  color: var(--highlight);
+  color: var(--highlight4);
 }
 
 nav {
@@ -110,6 +114,15 @@ h2.border {
 h2.border span {
   padding: 0 20px;
   color: black;
+}
+#me-section h2.border {
+  color: var(--highlight2);
+}
+#skills-section h2.border {
+  color: var(--highlight4);
+}
+#projects-section h2.border {
+  color: var(--foreground);
 }
 
 hr {
@@ -157,6 +170,11 @@ h3#bitmaker {
 h3#queens {
   background-color: var(--highlight2);
 }
+
+div#education-section {
+  background: url('images/skyline.png') no-repeat bottom right;
+  background-size: 100%;
+}
 /*CURRENT PROJECTS SECTION */
 a.cProject {
   font-weight: bold;
@@ -176,8 +194,8 @@ span.js-title {
 
 /*CONTACT SECTION */
 div#contact-section {
-  background: url('images/planes.png') no-repeat right;
-  background-size: 34.5%;
+  background: url('images/planes.png') no-repeat 105% 70%;
+  background-size: 40%;
 }
 #contact-section a {
   position: relative;
@@ -259,7 +277,7 @@ li.letter {
 
 li.letter:hover {
   /*color: white;*/
-  background-color: var(--foreground);
+  background-color: var(--highlight3);
   /*border-color: var(--highlight2);*/
 }
 
@@ -277,7 +295,8 @@ div.guess div {
 
 /*styling for concentration game*/
 div#skills-section {
-  background-color: var(--highlight2);
+  margin: 2% 10%;
+  background-color: rgba(255,255,255,0.9);
   padding: 10px;
   text-align: center;
   position: relative;
@@ -297,8 +316,6 @@ div#skills-section {
   width: 12%;
   display: block;
   clear: both;
-  border-color: white;
-  color: white;
 }
 
 #number-of-matches {
@@ -360,10 +377,11 @@ div.skill img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(179, 179, 179, 0.95);
+  /*background-color: rgba(179, 179, 179, 0.95);*/
+  background-color: rgba(238, 236, 254, 0.99);
   z-index: 100;
   display: none;
-  color: white;
+  color: black;
   overflow: auto;
 }
 
@@ -376,6 +394,16 @@ img.modal-skills {
 .modal h1 {
   width: 100%;
   text-align: center;
+}
+
+.modal h2 {
+  font-family: 'gotham';
+  text-transform: uppercase;
+}
+
+.modal h3 {
+  font-family: 'courier';
+  text-transform: lowercase;
 }
 
 #number-of-matches {
