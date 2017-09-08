@@ -119,7 +119,7 @@ h2.border span {
   padding: 0 20px;
   color: black;
 }
-#me-section h2.border {
+/*#me-section h2.border {
   color: var(--highlight2);
 }
 #skills-section h2.border {
@@ -127,7 +127,7 @@ h2.border span {
 }
 #projects-section h2.border {
   color: var(--foreground);
-}
+}*/
 
 hr {
   width: 35px;
@@ -316,7 +316,8 @@ div.guess div {
 /*styling for concentration game*/
 div#skills-section {
   margin: 2% 10%;
-  background-color: rgba(255,255,255,0.9);
+  background-color: var(--highlight2);
+  border: 16px double var(--background);
   padding: 10px;
   text-align: center;
   position: relative;
