@@ -269,18 +269,15 @@ $("#show-all-skills").on("click", function(e) {
 })
 
 $("#reset-all-skills").on("click", function(e) {
-  // location.reload();
-  document.querySelector('div#skills-section').style.display = "block";
-  const links = document.querySelectorAll('nav a')
-  links[2].classList.value += "toggleNav"
+  const allSkills = document.querySelectorAll(".skill");
+  allSkills.forEach(skill => skill.classList.remove("flip"));
+  allSkills.forEach(skill => skill.classList.remove("stay"))
 
   // e.preventDefault();
-  // matches = 0;
-  // clicks = 0;
-  // $('#number-of-matches').text("Matches: 0/10");
+  matches = 0;
+  clicks = 0;
+  $('#number-of-matches').text("Matches: 0/10");
   $('.modal').css("display", "none");
-  // $('div.skill').removeClass("flip");
-  // $('div.skill').removeClass("stay");
   // reDealCards();
 })
 
