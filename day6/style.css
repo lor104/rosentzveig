@@ -13,7 +13,7 @@
 }
 html {
   box-sizing: border-box;
-  background: url(../images/flower-swirl10.png);
+  /*background: url(../images/flower-swirl10.png);*/
   background-color: var(--background);
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
@@ -81,7 +81,7 @@ span.hex {
 }
 
 .hl {
-  background:var(--background);
+  background:var(--highlight4);
 }
 
 a {
