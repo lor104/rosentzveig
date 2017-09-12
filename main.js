@@ -50,10 +50,10 @@ $(document).ready(function() {
 
   //letters turn black when clicked
   $("li.letter").on("click", function(e) {
-    if ($(this).css("background-color") === "rgba(179, 179, 179, 0.3)") {
+    if ($(this).css("background-color") === "#EEECFE") {
       return;
     }
-    $(this).css("background-color", "rgba(179, 179, 179, 0.3)");
+    $(this).css("background-color", "#EEECFE");
     letterSelected = $(this).text()
     guessCorrect = false;
       for (var i = 0; i < guessWordLetterDivs.length; i++) {
@@ -149,7 +149,7 @@ $(document).ready(function() {
 
   cardDivs = [".card0", ".card1", ".card2", ".card3", ".card4", ".card5", ".card6", ".card7", ".card8", ".card9", ".card10", ".card11", ".card12", ".card13", ".card14", ".card15", ".card16", ".card17", ".card18", ".card19", ]
 
-  var front_img = "images/logo-2.png"
+  var front_img = "images/logo3.png"
   shuffleCards(skills)
 
   function dealCards() {
@@ -269,14 +269,15 @@ $("#show-all-skills").on("click", function(e) {
 })
 
 $("#reset-all-skills").on("click", function(e) {
-  location.reload();
+  const allSkills = document.querySelectorAll(".skill");
+  allSkills.forEach(skill => skill.classList.remove("flip"));
+  allSkills.forEach(skill => skill.classList.remove("stay"))
+
   // e.preventDefault();
-  // matches = 0;
-  // clicks = 0;
-  // $('#number-of-matches').text("Matches: 0/10");
-  // $('.modal').css("display", "none");
-  // $('div.skill').removeClass("flip");
-  // $('div.skill').removeClass("stay");
+  matches = 0;
+  clicks = 0;
+  $('#number-of-matches').text("Matches: 0/10");
+  $('.modal').css("display", "none");
   // reDealCards();
 })
 
@@ -322,5 +323,34 @@ reveal.addEventListener('click', function(e) {
   reveal.id = "";
 
 })
+
+//hover functions for nav bar
+const navLinks = document.querySelectorAll('nav a');
+
+//reset nav highlight before displaying new
+function resetNav(e) {
+  navLinks.forEach(link => link.classList = "")
+}
+
+//reset content before displaying new
+function resetContent(e) {
+  const contentAll = document.querySelectorAll('main > div');
+  contentAll.forEach(div => div.style.display = "none")
+}
+
+//click a nav element, highlight nav link and show hidden content
+function clickNav(e) {
+  e.preventDefault()
+  resetNav(e);
+  resetContent(e)
+  e.path[0].classList.value += "toggleNav";
+  const content = $(this).attr('href');
+  document.querySelector(content).style.display = "block"
+}
+
+navLinks.forEach(link => link.addEventListener('click', clickNav));
+
+document.querySelector('div#me-section').style.display = "block";
+document.querySelector('nav a').classList.value += "toggleNav"
 
 });

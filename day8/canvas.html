@@ -18,7 +18,7 @@
   var wrapperStyle=window.getComputedStyle(wrapper,null);
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  ctx.fillStyle = '#2BB673';
+  ctx.fillStyle = 'rgba(236, 255, 238, 0.97)';
   ctx.fillRect(0, 0, canvas.width, canvas.height)
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
@@ -63,7 +63,10 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
   html, body {
     margin:0;
     height: 100%;
-    cursor: url(dime.png), auto;
+    cursor: url(nickel.png), pointer;
+  }
+  html:active, body:active {
+    cursor: url(nickel.png), pointer;
   }
   #wrapper {
     position: relative;

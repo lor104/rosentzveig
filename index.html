@@ -4,7 +4,7 @@
     <meta charset=utf-8>
     <link rel="icon" href="images/R-icon2.jpg">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="newstyle.css">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -17,28 +17,28 @@
     <header>
       <!-- header image -->
       <div class="header">
-        <h1><span>L</span>auren Rosen<span>t</span>zveig</h1>
-        <h3>Front-End Web Developer</h3>
+        <h1>Lauren Rosentzveig</h1>
+        <!-- <h3>Front-End Web Developer</h3> -->
         <nav>
           <!-- navbar -->
           <ul>
             <li>
-              <a href="#me-section">About Me</a>
+              <a href="#me-section"><span>■</span>About Me</a>
             </li>
             <li>
-              <a href="#education-section">Education</a>
+              <a href="#education-section"><span>■</span>Education</a>
             </li>
             <li>
-              <a href="#skills-section">Skills</a>
+              <a href="#skills-section"><span>■</span>Skills</a>
             </li>
             <li>
-              <a href="#projects-section">Current Projects</a>
+              <a href="#projects-section"><span>■</span>Current Projects</a>
             </li>
             <li>
-              <a href="#experience-section">Past Projects</a>
+              <a href="#experience-section"><span>■</span>Past Projects</a>
             </li>
             <li>
-              <a href="#contact-section">Contact</a>
+              <a href="#contact-section"><span>■</span>Contact</a>
             </li>
           </ul>
         </nav>
@@ -48,41 +48,44 @@
     <main>
       <!-- about me -->
       <div id="me-section">
-        <h2 class="border"><span>About Me</span></h2>
-        <img src="images/profile.png" alt="profile" id="profile-img">
-        <p id="about-me-text">Traditional Printmaker turned Web Developer, I strive to be creative in everything I do. I tried to make a go of being a practicing artist, but the more I devoted myself to thinking without limitations, the more I missed knowing what the right answer was, or even that there was one. Being both creative and logical, I was finding it hard to find the balance between these two sides of me. This is what turned me towards Web Development: knowing that my skills of composition theory (seeing a problem through to completion in the best, most efficient way) and logical problem solving would help me get into a field I would excel in. </p>
+        <h2 class="border">■<span>About Me</span>■</h2>
+        <hr>
+        <!-- <img src="images/profile.png" alt="profile" id="profile-img"> -->
+        <p id="about-me-text"><span>Traditional Printmaker turned Web Developer, I strive to be creative in everything I do.</span> I tried to make a go of being a practicing artist, but the more I devoted myself to thinking without limitations, the more I missed knowing what the right answer was, or even that there was one. Being both creative and logical, I was finding it hard to find the balance between these two sides of me. This is what turned me towards Web Development: knowing that my skills of composition theory (seeing a problem through to completion in the best, most efficient way) and logical problem solving would help me get into a field I would excel in. </p>
+        <img id="portrait" src="images/portrait.png" alt="portrait-image">
       </div>
 
       <!-- education -->
       <div id="education-section">
-        <h2 class="border"><span>Education</span></h2>
-        <h3>Bitmaker Labs</h3>
+        <h2 class="border">■<span>Education</span>■</h2>
+        <hr>
+        <h3 id="bitmaker">Bitmaker Labs</h3>
         <h4>March - May 2017</h4>
         <p>Completed the Web Development (Full Stack) Immersive course in May 2017</p>
-        <h3>Queens University</h3>
+        <h3 id="queens">Queens University</h3>
         <h4>2011 - 2015</h4>
         <p>Graduated with a major in Fine Arts (specialization in Printmedia) and a minor in mathematics</p>
       </div>
 
       <!-- skills -->
       <div id="skills-section">
-        <h2>Technical Skills</h2>
+        <h2 class="border">■<span>Technical Skills</span>■</h2>
         <p>I made a game of concentration for you to play where all the cards are skills in which I'm proficient. If you'd rather not play, <a id="show-all-skills"href="#">click here</a></p>
         <div id="skills-game">
           <div class="modal">
-            <h1>Technical Skills</h1>
-            <h2>Proficient</h2>
+            <h2 class="border">■<span>Technical Skills</span>■</h2>
+            <h3>Proficient</h3>
             <img class="modal-skills" src="images/html.png" alt="HTML">
             <img class="modal-skills" src="images/css.png" alt="CSS">
             <img class="modal-skills" src="images/ruby.png" alt="Ruby">
             <img class="modal-skills" src="images/rails.png" alt="Rails">
             <img class="modal-skills" src="images/ai.png" alt="Adobe Illustrator">
             <img class="modal-skills" src="images/ps.png" alt="Adobe Photoshop">
-            <h2>Experienced</h2>
+            <h3>Experienced</h3>
             <img class="modal-skills" src="images/js.png" alt="JavaScript">
             <img class="modal-skills" src="images/jquery.png" alt="JQuery">
             <img class="modal-skills" src="images/git.png" alt="Git">
-            <h2>Competant</h2>
+            <h3>Competant</h3>
             <img class="modal-skills" src="images/sql.png" alt="SQL">
             <a id="reset-all-skills" href="#skills-section">start over</a>
           </div>
@@ -112,33 +115,35 @@
 
       <!-- current projects section -->
       <div id="projects-section">
-          <h2 class="border"><span>Current Projects</span></h2>
+          <h2 class="border">■<span>Current Projects</span>■</h2>
+          <hr>
           <h3>JavaScript30 Challenge</h3>
           <p>The <a class="no-style" href="https://javascript30.com/" target="_blank">JavaScript 30 Day Challenge</a> was put together by Wes Bos, a Full Stack Developer from Canada and a lead instructor with HackerYou. This challenge gives access to 30 videos, to be completed in 30 days (though not mandatory). My main focus is on Vanilla JavaScript fundamentals to better increase my fundamentals knowledge. I'm working to take the exercises given and use the new knowledge to apply to a new problem. Here are some of the challenges I've completed so far:</p>
-          <p> <strong>Day 1:</strong> Drum Kit<br> The tutorial video helped create a drum kit where when a specific key was pressed it would play a sound. I used the logic written by following along with the video and expanded it to allow for a keypress as well as a mouse click. I also changed the interface to mimic a phone dialpad. When 10 digits are entered, a ring is played. <br>
+          <p> <span class="js-title"><strong>Day 1:</strong> Drum Kit</span><br> The tutorial video helped create a drum kit where when a specific key was pressed it would play a sound. I used the logic written by following along with the video and expanded it to allow for a keypress as well as a mouse click. I also changed the interface to mimic a phone dialpad. When 10 digits are entered, a ring is played. <br>
           </p>
           <a class="cProject" href="./day1/phone.html" target="_blank">Dial a Phone</a>
 
-          <p> <strong>Day 2:</strong> Clock <br> For this one, I used the logic from the video and added my own CSS styling to it, along with numbers on the clock face <br>
+          <p> <span class="js-title"><strong>Day 2:</strong> Clock </span><br> For this one, I used the logic from the video and added my own CSS styling to it, along with numbers on the clock face <br>
           </p>
           <a class="cProject" href="./day2/clock.html" target="_blank">Clock</a>
 
-          <p> <strong>Day 6:</strong> Ajax Type Ahead <br>This tutorial video helped create a type ahead search function to filter through names of cities and states in the USA. I modified the functions to filter through colours for their names and hex codes. The hex code is also highlighted by it's own colour. <br>
+          <p> <span class="js-title"><strong>Day 6:</strong> Ajax Type Ahead </span><br>This tutorial video helped create a type ahead search function to filter through names of cities and states in the USA. I modified the functions to filter through colours for their names and hex codes. The hex code is also highlighted by it's own colour. <br>
           </p>
           <a class="cProject" href="./day6/typeahead.html" target="_blank">Type Ahead Colours</a>
 
-          <p> <strong>Day 8:</strong> HTML Canvas <br> The tutorial video helped introduce the canvas element and some basic Javascript logic to have the brush change hue and width as you draw. I transformed this to perform like a scratch card (when you draw, the top container disappears) <br>
+          <p> <span class="js-title"><strong>Day 8:</strong> HTML Canvas </span><br> The tutorial video helped introduce the canvas element and some basic Javascript logic to have the brush change hue and width as you draw. I transformed this to perform like a scratch card (when you draw, the top container disappears) <br>
           </p>
           <a class="cProject" href="./day8/canvas.html" target="_blank">Scratch Card</a>
 
-          <p> <strong>Day 12:</strong> KONAMI Code <br> The tutorial video introduced a simple function used to take a string of characters that were entered on the keyboard and recognize if it was the "secret code" stored. If it was, a unicorn or a rainbow would appear. I modified the function to change something on my page instead. See if you can figure it out! <br>
+          <p> <span class="js-title"><strong>Day 12:</strong> KONAMI Code </span><br> The tutorial video introduced a simple function used to take a string of characters that were entered on the keyboard and recognize if it was the "secret code" stored. If it was, a unicorn or a rainbow would appear. I modified the function to change something on my page instead. See if you can figure it out! <br>
           </p>
           <a class="cProject" id="reveal-code" href="#reveal-code">Reveal Code</a>
       </div>
 
       <!-- experience -->
       <div id="experience-section">
-        <h2 class="border"><span>Past Projects</span></h2>
+        <h2 class="border">■<span>Past Projects</span>■</h2>
+        <hr>
         <p>While studying at Bitmaker Labs, I created this app with 3 other talented developers. The goal of the app was to be able to lend a helping hand to those who are looking to expand their existing beer knowledge by giving a user an optimal beer choice taken through suggestions based on their individual user input ratings. This app is also able to provide the user with directions to bars around Toronto where the beers are available on tap!</p>
         <h3>Guess the app name!</h3>
         <div class="hangman 0">
@@ -169,11 +174,12 @@
 
       <!-- contact -->
       <div id="contact-section">
-        <h2 class="border"><span>Get In Touch !</span></h2>
-        <a href="mailto:lauren.rosentzveig@gmail.com"><i class="fa fa-envelope-o"></i> lauren.rosentzveig@gmail.com </a>
-        <a href="tel:6475195360"><i class="fa fa-phone"></i> (647) - 519 - 5360 </a>
-        <a href="http://www.linkedin.com/in/rosentzveig" target="_blank"><i class="fa fa-linkedin-square"></i> linkedin/rosentzveig </a>
-        <a href="http://github.com/lor104" target="_blank"><i class="fa fa-github"></i> github/lor104</a>
+        <h2 class="border">■<span>Get In Touch !</span>■</h2>
+        <hr>
+        <a id="contact-email" href="mailto:lauren.rosentzveig@gmail.com"><i class="fa fa-envelope-o"></i> lauren.rosentzveig@gmail.com </a>
+        <a id="contact-phone" href="tel:6475195360"><i class="fa fa-phone"></i> (647) - 519 - 5360 </a>
+        <a id="contact-linkedin" href="http://www.linkedin.com/in/rosentzveig" target="_blank"><i class="fa fa-linkedin-square"></i> linkedin/rosentzveig </a>
+        <a id="contact-github" href="http://github.com/lor104" target="_blank"><i class="fa fa-github"></i> github/lor104</a>
       </div>
     </main>
 

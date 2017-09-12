@@ -31,8 +31,22 @@
 
 
   <style>
+  :root {
+    --background: #FEFFF3;
+    --foreground: #ECFFEE;
+    --highlight: #FFF2DD;
+    --highlight2: #EEECFE;
+    --highlight3: #F4FED3;
+    --highlight4: #F2CFFB;
+    --black: #4f4f4f;
+    --highlight-o: rgba(255, 242, 221, 0.7);
+    --highlight2-o: rgba(238, 236, 254, 0.7);
+    --highlight3-o: rgba(244, 254, 211, 0.7);
+    --highlight4-o: rgba(242, 207, 251, 0.7);
+  }
+
     html {
-      background:#2BB673 url(forest-1031233_960_720.jpg);
+      background: var(--highlight3);
       background-size:cover;
       font-family: 'Open Sans', sans-serif;
       text-align: center;
@@ -56,7 +70,10 @@
       margin:50px auto;
       position: relative;
       padding:6rem;
-      background-color: rgba(0,0,0,0.4);
+      background: url(skyline.png) no-repeat 80%;
+      background-position: bottom right;
+      background-size: 350%;
+      background-color: var(--highlight2);
       box-shadow:
         0 0 0 4px rgba(0,0,0,0.1),
         inset 0 0 0 3px #EFEFEF,
@@ -74,7 +91,7 @@
     .hand {
       width:50%;
       height:6px;
-      background: white;
+      background: var(--black);
       position: absolute;
       top:50%;
       transform-origin: 100%;
@@ -85,7 +102,7 @@
     .second-hand {
       width:60%;
       left: -10%;
-      background: #d5d5d5;
+      background: #999999;
     }
     .min-hand {
       width:55%;
@@ -99,7 +116,7 @@
     .hour {
       position: absolute;
       font-size: 2.7em;
-      color: white;
+      color: var(--black);
     }
     .hour12 {
       left: calc(50% - 33px);
