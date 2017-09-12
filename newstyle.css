@@ -141,6 +141,21 @@ hr {
   text-align: center;
 }
 
+/*div#me-section {
+  background: url('images/portrait.png') no-repeat 0% 100%;
+  background-size: 15%;
+  background-attachment: initial;
+}*/
+
+img#portrait {
+  position: fixed;
+  bottom: -8px;
+  left: 5px;
+  width: 13%;
+  opacity: .9;
+  z-index: -1;
+}
+
 p#about-me-text {
 
 }
@@ -169,6 +184,7 @@ p#about-me-text > span {
 
 h3#bitmaker {
   background-color: var(--highlight3);
+  margin-top: 20px;
 }
 
 h3#queens {
