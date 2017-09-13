@@ -11,12 +11,14 @@ text: courier
   --highlight: #FFF2DD;
   --highlight2: #EEECFE;
   --highlight3: #F4FED3;
-  --highlight4: #F2CFFB;
+  --highlight4: #EDCFFB;
+  --highlight5: #FBD3B9;
   --black: #000000;
   --highlight-o: rgba(255, 242, 221, 0.7);
   --highlight2-o: rgba(238, 236, 254, 0.7);
   --highlight3-o: rgba(244, 254, 211, 0.7);
-  --highlight4-o: rgba(242, 207, 251, 0.7);
+  --highlight4-o: rgba(237, 207, 251, 0.7);
+  --highlight5-o: rgba(251, 211, 185, 0.7);
   --foreground-o: rgba(236, 255, 238, 0.7);
 }
 
@@ -102,11 +104,11 @@ a.no-style {
 }
 
 .toggleNav span {
-  color: var(--highlight);
+  color: var(--highlight5);
 }
 
 nav a:hover span {
-  color: var(--background);
+  color: var(--highlight);
 }
 
 nav {
@@ -253,19 +255,19 @@ i {
 }
 
 #contact-section #contact-email {
-  background-color: var(--highlight3-o);
-}
-
-#contact-section #contact-phone {
   background-color: var(--highlight2-o);
 }
 
+#contact-section #contact-phone {
+  background-color: var(--highlight-o);
+}
+
 #contact-section #contact-linkedin {
-  background-color: var(--foreground-o);
+  background-color: var(--highlight3-o);
 }
 
 #contact-section #contact-github {
-  background-color: var(--highlight-o);
+  background-color: var(--highlight5-o);
 }
 
 /*a {
