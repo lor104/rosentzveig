@@ -17,6 +17,7 @@ text: courier
   --highlight2-o: rgba(238, 236, 254, 0.7);
   --highlight3-o: rgba(244, 254, 211, 0.7);
   --highlight4-o: rgba(242, 207, 251, 0.7);
+  --foreground-o: rgba(236, 255, 238, 0.7);
 }
 
 * {
@@ -105,7 +106,7 @@ a.no-style {
 }
 
 nav a:hover span {
-  color: var(--highlight4);
+  color: var(--background);
 }
 
 nav {
@@ -191,9 +192,18 @@ h3#queens {
   background-color: var(--highlight2);
 }
 
-div#education-section {
+/*div#education-section {
   background: url('images/skyline.png') no-repeat bottom right;
   background-size: 100%;
+}*/
+
+img#skyline {
+  position: fixed;
+  bottom: -8px;
+  right: 0px;
+  width: 100%;
+  opacity: .9;
+  z-index: -100;
 }
 /*CURRENT PROJECTS SECTION */
 a.cProject {
@@ -243,7 +253,7 @@ i {
 }
 
 #contact-section #contact-email {
-  background-color: var(--highlight-o);
+  background-color: var(--highlight3-o);
 }
 
 #contact-section #contact-phone {
@@ -251,11 +261,11 @@ i {
 }
 
 #contact-section #contact-linkedin {
-  background-color: var(--highlight3-o);
+  background-color: var(--foreground-o);
 }
 
 #contact-section #contact-github {
-  background-color: var(--highlight4-o);
+  background-color: var(--highlight-o);
 }
 
 /*a {
@@ -332,7 +342,7 @@ div.guess div {
 /*styling for concentration game*/
 div#skills-section {
   margin: 2% 10%;
-  background-color: var(--highlight2);
+  background-color: white;
   border: 16px double var(--background);
   padding: 10px;
   text-align: center;
@@ -415,7 +425,7 @@ div.skill img {
   width: 100%;
   height: 100%;
   /*background-color: rgba(179, 179, 179, 0.95);*/
-  background-color: rgba(238, 236, 254, 0.99);
+  background-color: rgba(255, 255, 255, 0.99);
   z-index: 100;
   display: none;
   color: black;
