@@ -37,16 +37,25 @@
     --highlight: #FFF2DD;
     --highlight2: #EEECFE;
     --highlight3: #F4FED3;
-    --highlight4: #F2CFFB;
-    --black: #4f4f4f;
+    --highlight4: #EDCFFB;
+    --highlight5: #FBD3B9;
+    --black: #4F4F4F;
     --highlight-o: rgba(255, 242, 221, 0.7);
     --highlight2-o: rgba(238, 236, 254, 0.7);
     --highlight3-o: rgba(244, 254, 211, 0.7);
-    --highlight4-o: rgba(242, 207, 251, 0.7);
+    --highlight4-o: rgba(237, 207, 251, 0.7);
+    --highlight5-o: rgba(251, 211, 185, 0.7);
+    --foreground-o: rgba(236, 255, 238, 0.7);
   }
 
     html {
-      background: var(--highlight3);
+      background: repeating-linear-gradient(
+      to right,
+      var(--highlight),
+      var(--highlight) 50px,
+      var(--highlight5) 50px,
+      var(--highlight5) 100px
+    );
       background-size:cover;
       font-family: 'Open Sans', sans-serif;
       text-align: center;

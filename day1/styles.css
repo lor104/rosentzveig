@@ -4,12 +4,15 @@
   --highlight: #FFF2DD;
   --highlight2: #EEECFE;
   --highlight3: #F4FED3;
-  --highlight4: #F2CFFB;
-  --black: #323232;
+  --highlight4: #EDCFFB;
+  --highlight5: #FBD3B9;
+  --black: #000000;
   --highlight-o: rgba(255, 242, 221, 0.7);
   --highlight2-o: rgba(238, 236, 254, 0.7);
   --highlight3-o: rgba(244, 254, 211, 0.7);
-  --highlight4-o: rgba(242, 207, 251, 0.7);
+  --highlight4-o: rgba(237, 207, 251, 0.7);
+  --highlight5-o: rgba(251, 211, 185, 0.7);
+  --foreground-o: rgba(236, 255, 238, 0.7);
 }
 
 html {
@@ -29,6 +32,7 @@ div.keys div.key:nth-child(3n - 1) {
 }
 
 .keys {
+  cursor: pointer;
   transform: translate(36%, 20%);
   /*display: block;
   width: 50%;
@@ -41,7 +45,7 @@ div.keys div.key:nth-child(3n - 1) {
   box-sizing: content-box;
   display: inline-block;
   float: left;
-  border: .4rem outset var(--highlight4);
+  border: .4rem outset var(--highlight5);
   border-radius: 10rem;
   margin: 1rem;
   font-size: 1.5rem;
@@ -79,7 +83,7 @@ kbd {
   box-sizing: border-box;
   width: 41.6rem;
   height: 10rem;
-  border: .4rem solid var(--highlight4);
+  border: .4rem solid var(--highlight5);
   position: relative;
   background-color: var(--highlight2-o);
 }

@@ -4,20 +4,30 @@
   --highlight: #FFF2DD;
   --highlight2: #EEECFE;
   --highlight3: #F4FED3;
-  --highlight4: #F2CFFB;
+  --highlight4: #EDCFFB;
+  --highlight5: #FBD3B9;
   --black: #000000;
   --highlight-o: rgba(255, 242, 221, 0.7);
   --highlight2-o: rgba(238, 236, 254, 0.7);
   --highlight3-o: rgba(244, 254, 211, 0.7);
-  --highlight4-o: rgba(242, 207, 251, 0.7);
+  --highlight4-o: rgba(237, 207, 251, 0.7);
+  --highlight5-o: rgba(251, 211, 185, 0.7);
+  --foreground-o: rgba(236, 255, 238, 0.7);
 }
 html {
   box-sizing: border-box;
   /*background: url(../images/flower-swirl10.png);*/
-  background-color: var(--background);
+  background-color: var(--foreground);
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   font-weight: 200;
+  /*background: repeating-linear-gradient(
+  to right,
+  var(--highlight2),
+  var(--highlight2) 30px,
+  var(--highlight5) 30px,
+  var(--highlight5) 60px
+);*/
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -81,7 +91,7 @@ span.hex {
 }
 
 .hl {
-  background:var(--highlight4);
+  background:var(--highlight5);
 }
 
 a {
