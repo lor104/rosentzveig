@@ -204,7 +204,7 @@ img#skyline {
   bottom: -8px;
   right: 0px;
   width: 100%;
-  opacity: .9;
+  opacity: .8;
   z-index: -100;
 }
 /*CURRENT PROJECTS SECTION */
@@ -457,4 +457,44 @@ img.modal-skills {
 
 #number-of-matches {
   margin-bottom: 10px;
+}
+.navicon {
+  z-index: 2;
+}
+
+@media only screen and (max-width: 1030px) {
+  .header {
+    background-color: var(--highlight3);
+  }
+  .header li {
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 972px) {
+  .header {
+    background-color: var(--highlight4);
+  }
+  .header li {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 911px) {
+  .header {
+    background-color: var(--highlight4);
+  }
+  .header li {
+    padding-left: 0;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    float: left;
+    clear: both;
+    display: none;
+  }
+  .navicon {
+    display: block;
+  }
+
 }
