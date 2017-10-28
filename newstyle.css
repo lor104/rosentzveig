@@ -4,6 +4,8 @@ title: gotham bold
 text: courier
 */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+
 
 :root {
   --background: #FEFFF3;
@@ -32,8 +34,9 @@ html {
 }
 
 h1, h2, h3, h2.border span {
-  font-family: 'Gotham';
-  font-weight: bold;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-style: black;
   text-transform: uppercase;
   letter-spacing: 8px;
 }
