@@ -307,9 +307,10 @@ var text_replace = function() {
       h = hs[k];
       h.innerHTML = words[Math.floor(Math.random()*words.length)] + ' ' + h.innerHTML;
       if (hc === 2) {
+        h.innerHTML = words[Math.floor(Math.random()*words.length)] + ' ' + h.lastElementChild.innerText;
         h.class = "border"
-        var inside = h.innerText;
-        h.innerHTML = `<span> ${inside} </span>`;
+        var inside = h.innerHTML;
+        h.innerHTML = `■<span> ${inside} </span>■`;
       }
     }
     hc-=1;
