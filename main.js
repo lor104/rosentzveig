@@ -324,33 +324,5 @@ reveal.addEventListener('click', function(e) {
 
 })
 
-//hover functions for nav bar
-const navLinks = document.querySelectorAll('nav a');
-
-//reset nav highlight before displaying new
-function resetNav(e) {
-  navLinks.forEach(link => link.classList = "")
-}
-
-//reset content before displaying new
-function resetContent(e) {
-  const contentAll = document.querySelectorAll('main > div');
-  contentAll.forEach(div => div.style.display = "none")
-}
-
-//click a nav element, highlight nav link and show hidden content
-function clickNav(e) {
-  e.preventDefault()
-  resetNav(e);
-  resetContent(e)
-  e.path[0].classList.value += "toggleNav";
-  const content = $(this).attr('href');
-  document.querySelector(content).style.display = "block"
-}
-
-navLinks.forEach(link => link.addEventListener('click', clickNav));
-
-document.querySelector('div#me-section').style.display = "block";
-document.querySelector('nav a').classList.value += "toggleNav"
 
 });
