@@ -70,14 +70,17 @@ main > div {
   position: relative;
 }
 
-ul li {
+.header ul li {
   list-style-type: none;
   display: inline-block;
   padding-left: 20px;
 }
 
-ul {
+.header ul {
   padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 a {
@@ -172,12 +175,73 @@ p#about-me-text > span {
   padding-bottom: 10px;
 
 }
-/*EDUCATION SECTION */
 
-#experience-section {
+/* EXPERIENCE SECTION */
+#experience-section #richmondday{
+  background-color: var(--highlight2);
+  margin-top: 20px;
+}
+#experience-section #healthworks {
+  background-color: var(--highlight);
+  margin-top: 20px;
+}
+#experience-section #babyuno {
+  background-color: var(--highlight3);
+  margin-top: 20px;
+}
+#experience-section .experience-item {
+  margin: 50px 0;
+}
+#experience-section .experience-item .item-header {
+  margin: 20px 0;
+}
+#experience-section .experience-item .item-header h3 {
+  padding: 15px;
+  margin: 0 15%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+}
+#experience-section .experience-item .item-header h4 {
+  margin: 25px 0 10px;
+}
+
+#experience-section .experience-item .item-header h5 {
+  margin: 10px 0;
+}
+#experience-section .experience-item .projects .projects-item {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+}
+#experience-section .experience-item .projects .projects-item h5 {
+  margin: 0;
+}
+#experience-section .experience-item .projects .projects-item p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+#experience-section .experience-item .projects .projects-item a {
+  font-weight: bold;
+  padding: 5px;
+  margin-top: 5px;
+  display: inline-block;
+}
+  #experience-section .experience-item .projects .projects-item.richmondday a {
+    background-color: var(--highlight2);
+  }
+  #experience-section .experience-item .projects-item.babyuno a {
+    background-color: var(--highlight3);
+  }
+
+#past-projects-section {
   clear:both;
 }
 
+/*EDUCATION SECTION */
 #education-section h3 {
   padding: 15px;
   margin: 0 15%;
@@ -188,13 +252,17 @@ p#about-me-text > span {
   width: 70%;
 }
 
-h3#bitmaker {
+h3#uxd {
   background-color: var(--highlight3);
   margin-top: 20px;
 }
 
-h3#queens {
+h3#bitmaker {
   background-color: var(--highlight2);
+}
+
+h3#queens {
+  background-color: var(--highlight5);
 }
 
 /*div#education-section {
@@ -344,15 +412,59 @@ div.guess div {
   border-bottom: 2px solid black;
 }
 
+/* SKILLS PAGE - revised */
+#skills-section {
+
+}
+#skills-section .skills-item {
+
+}
+
+#skills-section .skills-item h3 {
+  padding: 15px;
+  margin: 0 15%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+}
+
+#skills-section .skills-item h3#proficient {
+  background-color: var(--highlight3);
+  margin-top: 20px;
+}
+
+h3#experienced {
+  background-color: var(--highlight);
+}
+h3#competant {
+  background-color: var(--highlight2);
+}
+h3#introduced {
+  background-color: var(--highlight5);
+}
+
+#skills-section .skills-item h3 {
+  font-family: 'courier';
+  text-transform: lowercase;
+}
+#skills-section .skills-list ul {
+  padding: 0;
+  list-style-type: none;
+}
+#skills-section .skills-list ul li{
+  line-height: 24px;
+}
 /*styling for concentration game*/
 div#skills-section {
-  margin: 2% 10%;
+  /* margin: 2% 10%;
   background-color: white;
   border: 16px double var(--background);
   padding: 10px;
   text-align: center;
   position: relative;
-  height: 110%;
+  height: 110%; */
 }
 
 #skills-game {
@@ -460,4 +572,12 @@ img.modal-skills {
 
 #number-of-matches {
   margin-bottom: 10px;
+}
+
+@media only screen (max-width: 900px) {
+    .header ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
 }
