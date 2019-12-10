@@ -189,6 +189,10 @@ p#about-me-text > span {
   background-color: var(--highlight3);
   margin-top: 20px;
 }
+#experience-section #bitmaker {
+  background-color: var(--highlight5);
+  margin-top: 20px;
+}
 #experience-section .experience-item {
   margin: 50px 0;
 }
@@ -236,6 +240,10 @@ p#about-me-text > span {
   }
   #experience-section .experience-item.babyuno a {
     background-color: var(--highlight3);
+  }
+
+  #experience-section .experience-item.bitmaker a {
+    background-color: var(--highlight5);
   }
 
 #past-projects-section {
