@@ -112,143 +112,158 @@ $(document).ready(function() {
   // }
 }
 
-
-
-
-});
 // Javascript functions for concentration game
-$(document).ready(function() {
-  var clicks = 0; //keep track of number of clicks
-  var firstChoice; //first card clicked - will store the index
-  var secondChoice; //second card clicked - will store the index
-  var firstChoiceDiv; //first card clicked - will store the parent div
-  var secondChoiceDiv; //second card clicked - will store the parent div
-  var matches = 0; // logs the number of matched cards
+var clicks = 0; //keep track of number of clicks
+var firstChoice; //first card clicked - will store the index
+var secondChoice; //second card clicked - will store the index
+var firstChoiceDiv; //first card clicked - will store the parent div
+var secondChoiceDiv; //second card clicked - will store the parent div
+var matches = 0; // logs the number of matched cards
 
-  skills = []
-  skills[0] = {id: 0, photo: "images/ruby.png"}
-  skills[1] = {id: 1, photo: "images/html.png"}
-  skills[2] = {id: 2, photo: "images/ai.png"}
-  skills[3] = {id: 3, photo: "images/js.png"}
-  skills[4] = {id: 4, photo: "images/git.png"}
-  skills[5] = {id: 5, photo: "images/css.png"}
-  skills[6] = {id: 6, photo: "images/jquery.png"}
-  skills[7] = {id: 7, photo: "images/ps.png"}
-  skills[8] = {id: 8, photo: "images/sql.png"}
-  skills[9] = {id: 9, photo: "images/rails.png"}
-  skills[10] = {id: 10, photo: "images/ruby.png"}
-  skills[11] = {id: 11, photo: "images/html.png"}
-  skills[12] = {id: 12, photo: "images/ai.png"}
-  skills[13] = {id: 13, photo: "images/js.png"}
-  skills[14] = {id: 14, photo: "images/git.png"}
-  skills[15] = {id: 15, photo: "images/css.png"}
-  skills[16] = {id: 16, photo: "images/jquery.png"}
-  skills[17] = {id: 17, photo: "images/ps.png"}
-  skills[18] = {id: 18, photo: "images/sql.png"}
-  skills[19] = {id: 19, photo: "images/rails.png"}
+skills = []
+skills[0] = {id: 0, photo: "images/ruby.png"}
+skills[1] = {id: 1, photo: "images/html.png"}
+skills[2] = {id: 2, photo: "images/ai.png"}
+skills[3] = {id: 3, photo: "images/js.png"}
+skills[4] = {id: 4, photo: "images/git.png"}
+skills[5] = {id: 5, photo: "images/css.png"}
+skills[6] = {id: 6, photo: "images/jquery.png"}
+skills[7] = {id: 7, photo: "images/ps.png"}
+skills[8] = {id: 8, photo: "images/sql.png"}
+skills[9] = {id: 9, photo: "images/rails.png"}
+skills[10] = {id: 10, photo: "images/sass.png"}
+skills[11] = {id: 11, photo: "images/csharp.png"}
+skills[12] = {id: 12, photo: "images/net.png"}
+skills[13] = {id: 13, photo: "images/react.png"}
+skills[14] = {id: 14, photo: "images/node.png"}
+skills[15] = {id: 15, photo: "images/ruby.png"}
+skills[16] = {id: 16, photo: "images/html.png"}
+skills[17] = {id: 17, photo: "images/ai.png"}
+skills[18] = {id: 18, photo: "images/js.png"}
+skills[19] = {id: 19, photo: "images/git.png"}
+skills[20] = {id: 20, photo: "images/css.png"}
+skills[21] = {id: 21, photo: "images/jquery.png"}
+skills[22] = {id: 22, photo: "images/ps.png"}
+skills[23] = {id: 23, photo: "images/sql.png"}
+skills[24] = {id: 24, photo: "images/rails.png"}
+skills[25] = {id: 25, photo: "images/sass.png"}
+skills[26] = {id: 26, photo: "images/csharp.png"}
+skills[27] = {id: 27, photo: "images/net.png"}
+skills[28] = {id: 28, photo: "images/react.png"}
+skills[29] = {id: 29, photo: "images/node.png"}
 
-  cardDivs = [".card0", ".card1", ".card2", ".card3", ".card4", ".card5", ".card6", ".card7", ".card8", ".card9", ".card10", ".card11", ".card12", ".card13", ".card14", ".card15", ".card16", ".card17", ".card18", ".card19", ]
 
-  var front_img = "images/logo3.png"
-  shuffleCards(skills)
+cardDivs = [];
+for (var i = 0; i < 20; i++) {
+  cardDivs.push(`.card${i}`)
+}
 
-  function dealCards() {
-  for (var i = 0; i < 20; i++) {
-    var this_div = ".card" + i;
-    var front_card = "<img src='"+ front_img +"' class='face front'></img>";
-    var back_card = "<img src='"+ skills[i].photo +"' class='face back'></img>";
-    $(front_card).appendTo(this_div);
-    $(back_card).appendTo(this_div);
-  }};
+var front_img = "images/logo5.png"
+shuffleCards(skills)
 
-  dealCards();
+function dealCards() {
+for (var i = 0; i < 30; i++) {
+  var this_div = ".card" + i;
+  var front_card = "<img src='"+ front_img +"' class='face front'></img>";
+  var back_card = "<img src='"+ skills[i].photo +"' class='face back'></img>";
+  $(front_card).appendTo(this_div);
+  $(back_card).appendTo(this_div);
+}};
 
-  $('div.skill img').on('click', function(e) {
-      //once matched the card cant be selected again
-      if ($(this).parent().hasClass("stay")) {
-        return;
-      }
+dealCards();
 
-      //wont register the same card if you click it twice
-      if ($(this).parent().hasClass("flip")) {
-        return;
-      }
+$('div.skill img').on('click', handleSkillClick )
 
-      if (clicks === 0) {
-          $(this).parent().toggleClass("flip");
-          clicks++;
-          firstChoice = findChoiceId($(this).parent());
-          firstChoiceDiv = findDivClass($(this).parent());
-      } else {
-          $(this).parent().toggleClass("flip");
-          secondChoice = findChoiceId($(this).parent());
-          clicks++;
-          secondChoice = findChoiceId($(this).parent());
-          secondChoiceDiv = findDivClass($(this).parent());
+function handleSkillClick() {
+  //once matched the card cant be selected again
+  if ($(this).parent().hasClass("stay")) {
+    return;
+  }
 
-          if (!checkMatch(firstChoice, secondChoice, firstChoiceDiv, secondChoiceDiv)) {
-            setTimeout(function() {
-              flipCards(firstChoiceDiv, secondChoiceDiv);
-            }, 1300); }
-      }
-  })
+  //wont register the same card if you click it twice
+  if ($(this).parent().hasClass("flip")) {
+    return;
+  }
 
-  function checkMatch(firstChoice, secondChoice, firstChoiceDiv, secondChoiceDiv) {
-    clicks = 0;
-    if (firstChoice === secondChoice) {
-      $("." + firstChoiceDiv).toggleClass("stay");
-      $("." + secondChoiceDiv).toggleClass("stay");
-      matches++;
-      $('#number-of-matches').text("Matches: " + matches + "/10")
-      if (matches === 10) {
-        $('.modal').fadeIn(2000);
-      }
-      return true;
-      //match
-    } else {
-      //reset
-      return false;
+  if (clicks === 0) {
+      $(this).parent().toggleClass("flip");
+      clicks++;
+      firstChoice = findChoiceId($(this).parent());
+      firstChoiceDiv = findDivClass($(this).parent());
+  } else if (clicks === 1) {
+      $(this).parent().toggleClass("flip");
+      secondChoice = findChoiceId($(this).parent());
+      clicks++;
+      secondChoice = findChoiceId($(this).parent());
+      secondChoiceDiv = findDivClass($(this).parent());
+
+      if (!checkMatch(firstChoice, secondChoice, firstChoiceDiv, secondChoiceDiv)) {
+        //remove click event while checking match
+        $('div.skill img').unbind('click', handleSkillClick)
+        setTimeout(function() {
+          flipCards(firstChoiceDiv, secondChoiceDiv);
+          //bind click event again when cards are flipped back
+          $('div.skill img').bind('click', handleSkillClick)
+        }, 1300); }
+  }
+}
+
+function checkMatch(firstChoice, secondChoice, firstChoiceDiv, secondChoiceDiv) {
+  clicks = 0;
+  if (firstChoice === secondChoice) {
+    $("." + firstChoiceDiv).toggleClass("stay");
+    $("." + secondChoiceDiv).toggleClass("stay");
+    matches++;
+    $('#number-of-matches').text("Matches: " + matches + "/15")
+    if (matches === 15) {
+      $('.modal').fadeIn(2000);
+    }
+    return true;
+    //match
+  } else {
+    //reset
+    return false;
+  }
+}
+
+function findChoiceId(div) {
+  var divClass = $(div).attr("class");
+  divClass = divClass.split(" ");
+  divClass = divClass[0];
+  var imageFind = "div." + divClass + " img.back";
+  imageFind = $(imageFind).attr("src");
+  var choice = findCardId(imageFind);
+  return choice;
+}
+
+function findDivClass(divClicked) {
+  var divClass = $(divClicked).attr("class");
+  divClass = divClass.split(" ");
+  divClass = divClass[0];
+  return divClass
+}
+
+function flipCards(firstChoiceDiv, secondChoiceDiv) {
+  $('div').not('.stay').removeClass("flip")
+}
+
+function findCardId(image) {
+  //image is the photo link
+  for (var i = 0; i < skills.length; i++) {
+    if (skills[i].photo === image) {
+      return skills[i].id;
     }
   }
+}
 
-  function findChoiceId(div) {
-    var divClass = $(div).attr("class");
-    divClass = divClass.split(" ");
-    divClass = divClass[0];
-    var imageFind = "div." + divClass + " img.back";
-    imageFind = $(imageFind).attr("src");
-    var choice = findCardId(imageFind);
-    return choice;
+function shuffleCards(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
   }
-
-  function findDivClass(divClicked) {
-    var divClass = $(divClicked).attr("class");
-    divClass = divClass.split(" ");
-    divClass = divClass[0];
-    return divClass
-  }
-
-  function flipCards(firstChoiceDiv, secondChoiceDiv) {
-    $('div').not('.stay').removeClass("flip")
-  }
-
-  function findCardId(image) {
-    //image is the photo link
-    for (var i = 0; i < skills.length; i++) {
-      if (skills[i].photo === image) {
-        return skills[i].id;
-      }
-    }
-  }
-
-  function shuffleCards(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    return array;
+  return array;
 }
 
 function reDealCards() {
@@ -273,12 +288,10 @@ $("#reset-all-skills").on("click", function(e) {
   allSkills.forEach(skill => skill.classList.remove("flip"));
   allSkills.forEach(skill => skill.classList.remove("stay"))
 
-  // e.preventDefault();
   matches = 0;
   clicks = 0;
   $('#number-of-matches').text("Matches: 0/10");
   $('.modal').css("display", "none");
-  // reDealCards();
 })
 
 //KONAMI code for keypress recognition
@@ -300,30 +313,28 @@ var text_replace = function() {
   var hs;
   var h;
   var k;
-  var words = ['Delightful','Fantastic','Pleasing','Fun','Magical','Lovely','Captivating','Charming','Amazing','Wonderful'];
+  var words = ['Delightful','Fantastic','Magical','Lovely','Incredibly Captivating','Amazingly Charming', 'Wonderful'];
   while(hc >= 1) {
     hs = document.getElementsByTagName('h' + hc);
+    console.log(hs)
     for (k = 0; k < hs.length; k++) {
       h = hs[k];
-      h.innerHTML = words[Math.floor(Math.random()*words.length)] + ' ' + h.innerHTML;
-      if (hc === 2) {
-        h.innerHTML = words[Math.floor(Math.random()*words.length)] + ' ' + h.lastElementChild.innerText;
-        h.class = "border"
-        var inside = h.innerHTML;
-        h.innerHTML = `■<span> ${inside} </span>■`;
+      if (h.tagName.toLowerCase() === "h1" && Array.from(h.classList).indexOf('konami') === -1) {
+        h.innerHTML = "The " + words[Math.floor(Math.random()*words.length)] + ' ' + h.innerHTML;
+        h.classList.add('konami')
       }
     }
     hc-=1;
   }
 };
 
-const reveal = document.querySelector('#reveal-code');
-reveal.addEventListener('click', function(e) {
-  e.preventDefault;
-  reveal.innerText = "↑ ↓ ↑ ↓ ← →";
-  reveal.id = "";
+// const reveal = document.querySelector('#reveal-code');
+// reveal.addEventListener('click', function(e) {
+//   e.preventDefault;
+//   reveal.innerText = "↑ ↓ ↑ ↓ ← →";
+//   reveal.id = "";
 
-})
+// })
 
 
 });
