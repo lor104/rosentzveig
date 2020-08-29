@@ -1,0 +1,661 @@
+/*
+fonts:
+title: gotham bold --> montserrat
+text: courier
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+
+
+$background: #FEFFF3;
+$foreground: #ECFFEE;
+$highlight: #FFF2DD;
+$highlight2: #EEECFE;
+$highlight3: #F4FED3;
+$highlight4: #EDCFFB;
+$highlight5: #FBD3B9;
+$black: #000000;
+$highlight-o: rgba(255, 242, 221, 0.7);
+$highlight2-o: rgba(238, 236, 254, 0.7);
+$highlight3-o: rgba(244, 254, 211, 0.7);
+$highlight4-o: rgba(237, 207, 251, 0.7);
+$highlight5-o: rgba(251, 211, 185, 0.7);
+$foreground-o: rgba(236, 255, 238, 0.7);
+
+* {
+  font-family: 'courier';
+}
+
+html {
+  background-color: $background;
+  text-align: center;
+}
+
+html,  body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h2.border span {
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-style: black;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+
+p {
+  letter-spacing: 5px;
+  line-height: 2.2em;
+  font-size: 18px;
+}
+
+main > div {
+  padding: 3% 15%;
+  position: relative;
+}
+
+.header {
+  background-color: $foreground;
+}
+
+.header {
+  margin: auto 0;
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  ul {
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      padding-left: 20px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 3px 10px;
+  margin: 3px;
+  color: black;
+  span {
+    position: relative;
+    top: 4px;
+    padding-right: 5px;
+    font-size: 1.8em;
+    height: 0;
+    line-height: 0;
+    margin-bottom: 0;
+    color: $foreground;
+  }
+
+  &.no-style {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+  }
+}
+
+.toggleNav span {
+  color: $highlight5;
+}
+
+nav {
+  padding: 5px 0;
+  a:hover {
+    span {
+        color: $highlight;
+      }
+  } 
+}
+
+h2.border {
+  color: $highlight;
+  span {
+    padding: 0 20px;
+    color: black;
+  }
+}
+
+hr {
+  width: 35px;
+  height: 1px;
+  background-color: black;
+  margin-bottom: 50px;
+}
+
+
+/*ABOUT ME SECTION */
+#me-section {
+  text-align: center;
+}
+
+img#portrait {
+  position: absolute;
+  bottom: -21px;
+  left: 5px;
+  width: 14%;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+p#about-me-text {
+  margin: 50px 0;
+  > span {
+    font-weight: bold;
+    display: block;
+    padding-bottom: 10px;
+  }
+}
+
+/* EXPERIENCE SECTION */
+#experience-section {
+    #richmondday{
+        background-color: $highlight2;
+        margin-top: 20px;
+    }
+    #healthworks {
+        background-color: $highlight;
+        margin-top: 20px;
+      }
+    #babyuno {
+        background-color: $highlight3;
+        margin-top: 20px;
+    }
+    #bitmaker {
+        background-color: $highlight5;
+        margin-top: 20px;
+    }
+    .experience-item {
+        margin: 50px 0;
+        .item-header {
+            margin: 20px 0;
+
+            h3 {
+                padding: 15px;
+                margin: 0 15%;
+                display: flex;
+                flex: 1;
+                justify-content: center;
+                text-align: center;
+                width: 70%;
+            }
+
+            h4 {
+                margin: 25px 0 10px;
+            }
+
+            h5 {
+                margin: 10px 0;
+            }
+              
+        }
+
+        .projects {
+            width: 63%;
+            margin: auto;
+
+            .projects-item {
+                list-style-type: none;
+                padding: 0;
+                margin: 15px 0;
+
+                h5 {
+                    background: $highlight2;
+                    width: 80%;
+                    margin: 30px auto;
+                    text-align: center;
+                    padding: 10px;
+                    font-size: 16px;
+                    font-family: 'Montserrat', sans-serif;;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 16px;
+                    letter-spacing: 3px;
+                  }
+
+                  a {
+                    font-weight: bold;
+                    padding: 5px;
+                    margin-top: 5px;
+                    display: inline-block;
+                    line-height: 21px;
+                    text-decoration: underline;
+                    font-size: 16px;
+                  
+                  }
+            }
+        }
+    }
+} 
+
+#past-projects-section {
+  clear:both;
+}
+
+/*EDUCATION SECTION */
+#education-section {
+    h3 {
+      padding: 15px;
+      margin: 0 15%;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      text-align: center;
+      width: 70%;
+
+      &#uxd {
+        margin-top: 50px;
+        background-color: $highlight3;
+      }
+
+      &#bitmaker {
+        margin-top: 50px;
+        background-color: $highlight2;
+      }
+
+      &#queens {
+        margin-top: 50px;
+        background-color: $highlight5;
+      }
+    }
+
+} 
+
+img#skyline {
+  position: absolute;
+  bottom: -8px;
+  right: 0px;
+  width: 100%;
+  opacity: .8;
+  z-index: -100;
+}
+
+/*CURRENT PROJECTS SECTION */
+a.cProject {
+  font-weight: bold;
+  padding: 5px;
+  background-color: $highlight2;
+}
+
+span.js-title {
+  line-height: 3em;
+  padding: 15px 0 5px;
+  border-top: 5px solid $highlight3;
+}
+
+#projects-section p {
+  margin-top: 50px;
+}
+
+/*CONTACT SECTION */
+#contact-section {
+  background: url('images/planes2.png') no-repeat 90% 70%;
+  background-size: 30%;
+
+  a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin: 3px;
+    display: block;
+    /*width: 33%;*/
+    margin: 12px 23%;
+    min-width: 300px;
+    text-align: right;
+    background: rgba(255,255,255,0.9);
+  }
+
+  i {
+    padding-right: 10px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+
+  #contact-email {
+    margin-top: 50px;
+    background-color: $highlight2-o;
+  }
+  
+  #contact-phone {
+    background-color: $highlight-o;
+  }
+  
+  #contact-linkedin {
+    background-color: $highlight3-o;
+  }
+  
+  #contact-github {
+    background-color: $highlight5-o;
+  }
+}
+
+/*styling for hangman game*/
+#hangman6 {
+  z-index: 7;
+}
+#hangman5 {
+  z-index: 6;
+  display: none;
+}
+#hangman4 {
+  z-index: 5;
+  display: none;
+}
+#hangman3 {
+  z-index: 4;
+  display: none;
+}
+#hangman2 {
+  z-index: 3;
+  display: none;
+}
+#hangman1 {
+  z-index: 2;
+  display: none;
+}
+#hangman-full {
+  z-index: 1;
+  display: none;
+}
+
+ul.alphabet {
+  list-style-type: none;
+}
+
+li.letter {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 9px;
+}
+
+li.letter:hover {
+  /*color: white;*/
+  background-color: $highlight3;
+  /*border-color: $highlight2;*/
+}
+
+div.guess div {
+  display: inline-block;
+  width: 20px;
+  color: $background;
+  text-align: center;
+  margin: 10px;
+  padding: 0 2px 5px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+}
+
+
+
+/* SKILLS PAGE - revised */
+#skills-section {
+  position: relative;
+
+}
+#skills-intro {
+  margin-top: 50px;
+}
+.skills-item {
+  h3 {
+    padding: 15px;
+    margin: 0 15%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    width: 70%;
+    &#proficient {
+      background-color: $highlight3;
+      margin-top: 20px;
+    }
+    &#experienced {
+      background-color: $highlight;
+    }
+    &#competent {
+      background-color: $highlight2;
+    }
+    &#introduced {
+      background-color: $highlight5;
+    }
+  
+  }
+  .skills-list ul {
+    padding: 0;
+    list-style-type: none;
+    li{
+      line-height: 24px;
+    }
+  }
+}
+
+  #show-all-skills {
+    color: #555;
+    cursor: pointer;
+  }
+
+#skills-game {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+  #number-of-matches {
+    clear:both;
+  }
+
+  .skill {
+    flex-basis: 16%;
+    cursor: pointer;
+    padding: 10px 0;
+
+        img {
+            width: 120px;
+            padding: 5px;
+        }
+
+        .card0, .card5, .card10, .card15 {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+#reset-all-skills {
+  margin: 2% 44% 0;
+  width: 12%;
+  display: block;
+  clear: both;
+}
+
+
+
+.front {
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  z-index: 1;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(-180deg) translateZ(1px);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.flip {
+  transform: rotateY(180deg) translateZ(1px);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.stay img.front {
+  visibility: visible;
+  visibility: hidden;
+}
+
+.stay img.back {
+  transform: rotateY(180deg) translateZ(1px);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.return {
+  transform: rotateY(-180deg) translateZ(1px);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 3% 0;
+  /*background-color: rgba(179, 179, 179, 0.95);*/
+  background-color: $background;
+  z-index: 100;
+  display: none;
+  color: black;
+  overflow: auto;
+  transform: translateZ(1px);
+}
+
+img.modal-skills {
+  width: 120px;
+  clear: both;
+  margin: 0 5px;
+}
+
+.modal {
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+    }
+} 
+
+#number-of-matches {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+  .header ul {
+      display: flex;
+      flex-direction: column;
+      flex-direction: column;
+      transform: translateX(-20px);
+  }
+  .header ul li {
+      line-height: 24px;
+  }
+
+  #experience-section .experience-item .projects {
+    width: 80%;
+    margin: auto;
+  }
+  #experience-section .experience-item .projects .projects-item h5 {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+  h1 { font-size: 28px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 16px; }
+  h4 { font-size: 14px; }
+  h5 { font-size: 12px; }
+  h6 { font-size: 12px; }
+  p { font-size: 12px; }
+  .header ul {
+      display: flex;
+      flex-direction: column;
+      flex-direction: column;
+      transform: translateX(-20px);
+  }
+  .header ul li {
+      line-height: 24px;
+  }
+  main > div {
+    padding: 3% 3%;
+  }
+
+  #me-section {
+    margin-bottom: 40px;
+  }
+
+  #education-section h3, #experience-section .experience-item .item-header h3, #skills-section .skills-item h3 {
+    padding: 15px;
+    margin: 0 auto;
+  }
+  #experience-section .experience-item .projects .projects-item p {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  #skills-section h2.border {
+    letter-spacing: 0px;
+    margin-bottom: 20px;
+  }
+  #skills-section h2.border span {
+    padding: 0 10px;
+    font-size: 18px;
+  }
+  #skills-section .skills-item {
+    margin-bottom: 30px;
+  }
+  #contact-section h2.border {
+    letter-spacing: 0px;
+    margin-bottom: 20px;
+  }
+  #contact-section h2.border span {
+    padding: 0 10px;
+    font-size: 18px;
+  }
+  #contact-section hr {
+    margin-bottom: 20px;
+  }
+  #contact-section a {
+    margin: 8px auto;
+  }
+  div#contact-section {
+    background: url('images/planes2.png') no-repeat;
+    background-size: 55%;
+    background-position: center 96%;
+    padding-bottom: 21%;
+  }
+  a span {
+    top: 0px;
+    font-size: 1.5em;
+  }
+}
