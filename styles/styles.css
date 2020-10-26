@@ -5,7 +5,7 @@ text: courier
 */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:600");
 * {
-  font-family: "courier";
+  font-family: 'courier';
 }
 
 html {
@@ -20,7 +20,7 @@ html, body {
 
 h1, h2, h3, h2.border span {
   font-weight: 600;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: black;
   text-transform: uppercase;
   letter-spacing: 8px;
@@ -48,6 +48,7 @@ main > div {
   width: 100%;
   position: relative;
 }
+
 .header ul {
   padding-left: 0;
   display: -webkit-box;
@@ -61,6 +62,7 @@ main > div {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .header ul li {
   list-style-type: none;
   display: inline-block;
@@ -74,6 +76,7 @@ a {
   margin: 3px;
   color: black;
 }
+
 a span {
   position: relative;
   top: 4px;
@@ -84,6 +87,7 @@ a span {
   margin-bottom: 0;
   color: #ECFFEE;
 }
+
 a.no-style {
   border: none;
   padding: 0;
@@ -98,6 +102,7 @@ a.no-style {
 nav {
   padding: 5px 0;
 }
+
 nav a:hover span {
   color: #FFF2DD;
 }
@@ -105,6 +110,7 @@ nav a:hover span {
 h2.border {
   color: #FFF2DD;
 }
+
 h2.border span {
   padding: 0 20px;
   color: black;
@@ -134,6 +140,7 @@ img#portrait {
 p#about-me-text {
   margin: 50px 0;
 }
+
 p#about-me-text > span {
   font-weight: bold;
   display: block;
@@ -145,24 +152,30 @@ p#about-me-text > span {
   background-color: #EEECFE;
   margin-top: 20px;
 }
+
 #experience-section #healthworks {
   background-color: #FFF2DD;
   margin-top: 20px;
 }
+
 #experience-section #babyuno {
   background-color: #F4FED3;
   margin-top: 20px;
 }
+
 #experience-section #bitmaker {
   background-color: #FBD3B9;
   margin-top: 20px;
 }
+
 #experience-section .experience-item {
   margin: 50px 0;
 }
+
 #experience-section .experience-item .item-header {
   margin: 20px 0;
 }
+
 #experience-section .experience-item .item-header h3 {
   padding: 15px;
   margin: 0 15%;
@@ -178,21 +191,26 @@ p#about-me-text > span {
   text-align: center;
   width: 70%;
 }
+
 #experience-section .experience-item .item-header h4 {
   margin: 25px 0 10px;
 }
+
 #experience-section .experience-item .item-header h5 {
   margin: 10px 0;
 }
+
 #experience-section .experience-item .projects {
   width: 63%;
   margin: auto;
 }
+
 #experience-section .experience-item .projects .projects-item {
   list-style-type: none;
   padding: 0;
   margin: 15px 0;
 }
+
 #experience-section .experience-item .projects .projects-item h5 {
   background: #EEECFE;
   width: 80%;
@@ -200,15 +218,17 @@ p#about-me-text > span {
   text-align: center;
   padding: 10px;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
+
 #experience-section .experience-item .projects .projects-item p {
   margin: 0;
   font-size: 16px;
   letter-spacing: 3px;
 }
+
 #experience-section .experience-item .projects .projects-item a {
   font-weight: bold;
   padding: 5px;
@@ -239,14 +259,17 @@ p#about-me-text > span {
   text-align: center;
   width: 70%;
 }
+
 #education-section h3#uxd {
   margin-top: 50px;
   background-color: #F4FED3;
 }
+
 #education-section h3#bitmaker {
   margin-top: 50px;
   background-color: #EEECFE;
 }
+
 #education-section h3#queens {
   margin-top: 50px;
   background-color: #FBD3B9;
@@ -257,7 +280,7 @@ img#skyline {
   bottom: -8px;
   right: 0px;
   width: 100%;
-  opacity: 0.8;
+  opacity: .8;
   z-index: -100;
 }
 
@@ -283,6 +306,7 @@ span.js-title {
   background: url("images/planes2.png") no-repeat 90% 70%;
   background-size: 30%;
 }
+
 #contact-section a {
   position: relative;
   color: black;
@@ -298,22 +322,27 @@ span.js-title {
   text-align: right;
   background: rgba(255, 255, 255, 0.9);
 }
+
 #contact-section i {
   padding-right: 10px;
   position: absolute;
   left: 10px;
   top: 10px;
 }
+
 #contact-section #contact-email {
   margin-top: 50px;
   background-color: rgba(238, 236, 254, 0.7);
 }
+
 #contact-section #contact-phone {
   background-color: rgba(255, 242, 221, 0.7);
 }
+
 #contact-section #contact-linkedin {
   background-color: rgba(244, 254, 211, 0.7);
 }
+
 #contact-section #contact-github {
   background-color: rgba(251, 211, 185, 0.7);
 }
@@ -409,23 +438,29 @@ div.guess div {
   text-align: center;
   width: 70%;
 }
+
 .skills-item h3#proficient {
   background-color: #F4FED3;
   margin-top: 20px;
 }
+
 .skills-item h3#experienced {
   background-color: #FFF2DD;
 }
+
 .skills-item h3#competent {
   background-color: #EEECFE;
 }
+
 .skills-item h3#introduced {
   background-color: #FBD3B9;
 }
+
 .skills-item .skills-list ul {
   padding: 0;
   list-style-type: none;
 }
+
 .skills-item .skills-list ul li {
   line-height: 24px;
 }
@@ -449,19 +484,23 @@ div.guess div {
           justify-content: center;
   text-align: center;
 }
+
 #skills-game #number-of-matches {
   clear: both;
 }
+
 #skills-game .skill {
   -ms-flex-preferred-size: 16%;
       flex-basis: 16%;
   cursor: pointer;
   padding: 10px 0;
 }
+
 #skills-game .skill img {
   width: 120px;
   padding: 5px;
 }
+
 #skills-game .skill .card0, #skills-game .skill .card5, #skills-game .skill .card10, #skills-game .skill .card15 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -555,8 +594,9 @@ img.modal-skills {
   width: 100%;
   text-align: center;
 }
+
 .modal h2 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 }
 
@@ -577,53 +617,43 @@ img.modal-skills {
     -webkit-transform: translateX(-20px);
             transform: translateX(-20px);
   }
-
   .header ul li {
     line-height: 24px;
   }
-
   #experience-section .experience-item .projects {
     width: 80%;
     margin: auto;
   }
-
   #experience-section .experience-item .projects .projects-item h5 {
     width: 80%;
   }
 }
+
 @media only screen and (max-width: 600px) {
   body {
     margin: 0;
   }
-
   h1 {
     font-size: 28px;
   }
-
   h2 {
     font-size: 20px;
   }
-
   h3 {
     font-size: 16px;
   }
-
   h4 {
     font-size: 14px;
   }
-
   h5 {
     font-size: 12px;
   }
-
   h6 {
     font-size: 12px;
   }
-
   p {
     font-size: 12px;
   }
-
   .header ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -636,69 +666,55 @@ img.modal-skills {
     -webkit-transform: translateX(-20px);
             transform: translateX(-20px);
   }
-
   .header ul li {
     line-height: 24px;
   }
-
   main > div {
     padding: 3% 3%;
   }
-
   #me-section {
     margin-bottom: 40px;
   }
-
   #education-section h3, #experience-section .experience-item .item-header h3, #skills-section .skills-item h3 {
     padding: 15px;
     margin: 0 auto;
   }
-
   #experience-section .experience-item .projects .projects-item p {
     margin: 0;
     font-size: 12px;
     letter-spacing: 3px;
   }
-
   #skills-section h2.border {
     letter-spacing: 0px;
     margin-bottom: 20px;
   }
-
   #skills-section h2.border span {
     padding: 0 10px;
     font-size: 18px;
   }
-
   #skills-section .skills-item {
     margin-bottom: 30px;
   }
-
   #contact-section h2.border {
     letter-spacing: 0px;
     margin-bottom: 20px;
   }
-
   #contact-section h2.border span {
     padding: 0 10px;
     font-size: 18px;
   }
-
   #contact-section hr {
     margin-bottom: 20px;
   }
-
   #contact-section a {
     margin: 8px auto;
   }
-
   div#contact-section {
-    background: url("images/planes2.png") no-repeat;
+    background: url("../images/planes2.png") no-repeat;
     background-size: 55%;
     background-position: center 96%;
     padding-bottom: 21%;
   }
-
   a span {
     top: 0px;
     font-size: 1.5em;
