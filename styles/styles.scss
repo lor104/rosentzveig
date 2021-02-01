@@ -301,8 +301,12 @@ span.js-title {
 
 /*CONTACT SECTION */
 #contact-section {
-  background: url('images/planes2.png') no-repeat 90% 70%;
+  background: url('../images/planes2.png') no-repeat 90% 70%;
   background-size: 30%;
+  // background: url("../images/planes2.png") no-repeat;
+  // background-size: 55%;
+  // background-position: center 96%;
+  // padding-bottom: 21%;
 
   a {
     position: relative;
@@ -649,7 +653,7 @@ img.modal-skills {
     margin: 8px auto;
   }
   div#contact-section {
-    background: url('../../images/planes2.png') no-repeat;
+    background: url('./../images/planes2.png') no-repeat;
     background-size: 55%;
     background-position: center 96%;
     padding-bottom: 21%;
